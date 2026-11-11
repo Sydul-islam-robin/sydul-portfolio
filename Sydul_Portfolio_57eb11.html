@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sydul Islam | Image Editing & Creative Services</title>
+<meta name="description" content="Sydul Islam — professional photo retouching, real estate photo editing, AI-assisted image editing and short-form video editing. Explore services, client feedback and professional experience.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+:root{--bg:#F4F6F6;--surface:#fff;--ink:#0F1A1D;--muted:#566469;--line:#DCE3E5;--accent:#0F766E;--accent-ink:#fff;--deep:#0A1518;--mint:#5EEAD4;--wa:#15803D;--star:#E3A008;--sh:0 1px 2px rgba(10,21,24,.05),0 10px 28px rgba(10,21,24,.05);color-scheme:light;box-sizing:border-box;padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0C1214;--surface:#141D20;--ink:#EEF3F3;--muted:#9AA9AD;--line:#243034;--accent:#5EEAD4;--accent-ink:#06201D;--deep:#060D0F;--wa:#22A559;--sh:none;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0C1214;--surface:#141D20;--ink:#EEF3F3;--muted:#9AA9AD;--line:#243034;--accent:#5EEAD4;--accent-ink:#06201D;--deep:#060D0F;--wa:#22A559;--sh:none;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65;font-size:1.02rem;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,nav b,.stats b{font-family:"Bricolage Grotesque","Figtree",system-ui,sans-serif}
+.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(18px,4vw,36px)}
+a{color:inherit}
+/* top bar */
+.topbar{position:sticky;top:0;z-index:20;padding-top:env(safe-area-inset-top,0px);background:rgba(6,13,15,.86);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08);color:#EAF4F3}
+nav{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:68px}
+nav b{display:flex;align-items:center;gap:10px;font-size:1.12rem;font-weight:700;letter-spacing:-.02em;white-space:nowrap}
+nav b::before{content:"";width:11px;height:11px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 4px rgba(94,234,212,.18)}
+nav>div{display:flex;align-items:center;gap:clamp(16px,2.4vw,30px)}
+nav a{text-decoration:none;font-size:.93rem;font-weight:500;color:#A9BDBF;white-space:nowrap;transition:color .2s}
+nav a:hover,nav a:focus-visible{color:#fff}
+nav a.nav-cta{color:#04201C;background:var(--mint);font-weight:700;padding:9px 18px;border-radius:999px}
+nav a.nav-cta:hover{background:#fff;color:#04201C}
+/* hero */
+header.hero{background:radial-gradient(900px 480px at 85% -10%,rgba(94,234,212,.20),transparent 65%),radial-gradient(700px 400px at 0 110%,rgba(15,118,110,.35),transparent 70%),var(--deep);color:#EAF4F3;padding:clamp(56px,9vw,116px) 0 0}
+.eyebrow{margin:0 0 18px;font-size:1.02rem;font-weight:600;color:var(--mint)}
+h1{margin:0 0 22px;font-size:clamp(2.35rem,6vw,4.7rem);line-height:1.03;font-weight:800;letter-spacing:-.045em;max-width:17ch;text-wrap:balance;color:#fff}
+.hero .sub{color:#A9BDBF;font-size:clamp(1.02rem,1.5vw,1.2rem);line-height:1.7;max-width:58ch;margin:0 0 34px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 26px;border-radius:999px;text-decoration:none;font:inherit;font-weight:700;font-size:.97rem;border:1px solid transparent;cursor:pointer;transition:transform .18s,background .18s,box-shadow .18s}
+.btn:hover{transform:translateY(-2px)}
+.btn.p{background:var(--mint);color:#04201C}
+.btn.p:hover{background:#fff}
+.btn.w{background:var(--wa);color:#fff}
+.btn.o{background:var(--surface);color:var(--ink);border-color:var(--line)}
+.btn.o:hover{border-color:var(--accent)}
+.hero .btn.w{background:transparent;border-color:rgba(255,255,255,.28)}
+.hero .btn.w:hover{background:rgba(255,255,255,.08)}
+.btn:focus-visible,.cat:focus-visible,.x:focus-visible,.item:focus-visible,.profile-card:focus-visible,.more:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.hero .btn:focus-visible,.contact .btn:focus-visible,nav a:focus-visible{outline-color:var(--mint)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:clamp(44px,7vw,80px);padding:30px 0 34px;border-top:1px solid rgba(255,255,255,.14)}
+.stats b{display:block;font-size:clamp(1.7rem,3.2vw,2.5rem);font-weight:700;line-height:1.1;letter-spacing:-.03em;color:#fff}
+.stats span{display:block;margin-top:6px;color:#A9BDBF;font-size:.92rem;line-height:1.45;max-width:26ch}
+/* sections */
+section{padding-block:clamp(56px,8vw,96px);padding-inline:max(clamp(18px,4vw,36px),calc((100% - 1160px)/2))}
+h2{margin:0 0 12px;font-size:clamp(1.8rem,3.6vw,2.7rem);line-height:1.1;font-weight:700;letter-spacing:-.035em}
+.sub{color:var(--muted);margin:0 0 36px;max-width:60ch;line-height:1.7}
+/* picture placeholders */
+.pic{position:relative;overflow:hidden;background:linear-gradient(to bottom,var(--a),var(--b))}
+.pic::before{content:"";position:absolute;inset:auto 0 0 0;height:45%;background:rgba(10,12,25,.55);clip-path:polygon(0 60%,18% 25%,34% 55%,52% 8%,72% 50%,88% 28%,100% 55%,100% 100%,0 100%)}
+.pic::after{content:"";position:absolute;width:18%;aspect-ratio:1;border-radius:50%;right:16%;top:16%;background:rgba(255,236,170,.9)}
+/* service cards */
+.cats{display:grid;gap:24px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.cat{cursor:pointer;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--sh);transition:transform .22s,box-shadow .22s,border-color .22s}
+.cat:hover,.cat:focus-visible{transform:translateY(-5px);border-color:var(--accent);box-shadow:0 22px 48px rgba(10,21,24,.14)}
+.cat .pic,.cat .ba{aspect-ratio:16/10;border:0;border-radius:0}
+.cat .body{padding:24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.cat h3{margin:0;font-size:1.3rem;font-weight:700;letter-spacing:-.025em}
+.cat p{margin:0;color:var(--muted);font-size:.97rem}
+.cat ul{margin:2px 0 0;padding-left:18px;font-size:.95rem}
+.cat li{padding:2px 0}
+.cat li::marker{color:var(--accent)}
+.more{margin-top:auto;padding:12px 0 0;background:none;border:0;font:inherit;font-weight:700;font-size:.95rem;color:var(--accent);cursor:pointer;text-align:left}
+.more::after{content:" \2192"}
+.badge{position:absolute;left:14px;top:14px;z-index:2;background:rgba(6,13,15,.72);color:#fff;font-size:.78rem;font-weight:600;padding:4px 12px;border-radius:99px;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+/* reviews */
+#reviews{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.rv{position:relative;display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-bottom:18px;-webkit-overflow-scrolling:touch}
+.rv::-webkit-scrollbar{display:none}
+.rv figure{flex:0 0 100%;scroll-snap-align:start;margin:0;background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:clamp(20px,3vw,30px);display:grid;grid-template-columns:230px 1fr;grid-template-rows:auto 1fr;grid-template-areas:"st q" "cap q";column-gap:36px;row-gap:10px}
+.rv .st{grid-area:st;color:var(--star);letter-spacing:3px;font-size:1.05rem}
+.rv blockquote{grid-area:q;align-self:center;margin:0;font-size:1.05rem;line-height:1.7}
+.rv figcaption{grid-area:cap;align-self:end;color:var(--muted);font-size:.88rem;line-height:1.45}
+.rv figcaption b{display:block;color:var(--ink);font-size:.98rem}
+.rv-ctl{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.rv-btn{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;font-size:1.15rem;cursor:pointer;transition:border-color .2s,background .2s}
+.rv-btn:hover{border-color:var(--accent)}
+.rv-btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.rv-n{color:var(--muted);font-size:.92rem;min-width:52px;text-align:center}
+.rv-ctl #fv{margin:0 0 0 auto;padding:11px 20px}
+@media(max-width:680px){.rv figure{grid-template-columns:1fr;grid-template-rows:auto;grid-template-areas:"st" "q" "cap"}.rv figcaption{align-self:start;padding-top:6px}.rv-ctl #fv{margin:8px 0 0;flex-basis:100%;text-align:center}}
+/* process */
+ol.steps{list-style:none;counter-reset:s;margin:0;padding:0;display:grid;gap:28px;grid-template-columns:repeat(4,minmax(0,1fr))}
+ol.steps li{counter-increment:s;padding-top:20px;border-top:2px solid var(--ink)}
+ol.steps li::before{content:counter(s);display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:2.2rem;font-weight:800;line-height:1;color:var(--accent);margin-bottom:14px}
+ol.steps b{display:block;font-size:1.08rem;margin-bottom:4px}
+ol.steps span{color:var(--muted);font-size:.95rem}
+/* about */
+#about{background:var(--surface);border-top:1px solid var(--line)}
+.about p{max-width:66ch;color:var(--muted);margin:0 0 16px;line-height:1.85;font-size:1.05rem}
+.about p b{color:var(--ink)}
+.why{display:grid;gap:28px 40px;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:44px}
+.why div{padding-left:20px;border-left:3px solid var(--accent)}
+.why h3{margin:0 0 6px;font-size:1.12rem;font-weight:700;letter-spacing:-.02em}
+.why p{margin:0;color:var(--muted);font-size:.97rem}
+/* profiles */
+.profile-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.profile-card{display:flex;align-items:center;gap:18px;padding:24px;border:1px solid var(--line);border-radius:20px;background:var(--surface);text-decoration:none;box-shadow:var(--sh);transition:transform .2s,border-color .2s}
+.profile-card:hover{transform:translateY(-3px);border-color:var(--accent)}
+.profile-icon{flex:0 0 54px;width:54px;height:54px;display:grid;place-items:center;border-radius:15px;color:#fff;font-size:1.45rem;font-weight:800;letter-spacing:-.06em}
+.fiverr-mark{background:#1dbf73}.linkedin-mark{background:#0a66c2}
+.profile-copy{display:flex;flex-direction:column;gap:3px;min-width:0}
+.profile-copy strong{font-family:"Bricolage Grotesque",sans-serif;font-size:1.15rem;letter-spacing:-.02em}
+.profile-copy span{color:var(--muted);font-size:.93rem;line-height:1.5}
+.profile-copy em{margin-top:6px;color:var(--accent);font-size:.9rem;font-style:normal;font-weight:700}
+/* contact */
+#contact{padding-top:0}
+#about{padding-block:clamp(56px,8vw,96px)}
+#reviews{padding-block:clamp(40px,6vw,64px)}
+#reviews .sub{margin-bottom:22px}
+.contact{background:radial-gradient(600px 300px at 100% 0,rgba(94,234,212,.18),transparent 70%),var(--deep);color:#EAF4F3;border-radius:28px;padding:clamp(28px,5vw,60px);display:grid;gap:36px;align-items:center}
+@media(min-width:820px){.contact{grid-template-columns:1.2fr 1fr}}
+.contact h2{color:#fff;font-size:clamp(2rem,4vw,3rem)}
+.contact .sub{color:#A9BDBF;margin:0 0 28px}
+.contact dl{margin:0;display:grid;gap:20px;padding:26px;border:1px solid rgba(255,255,255,.14);border-radius:20px;background:rgba(255,255,255,.04)}
+.contact dt{font-size:.85rem;color:#86A0A3}
+.contact dd{margin:2px 0 0;font-weight:600;overflow-wrap:anywhere}
+.contact dd a{color:#fff;text-underline-offset:3px}
+footer{padding:28px 0 100px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.fab{display:none;position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));background:var(--wa);color:#fff;text-decoration:none;font-weight:700;padding:13px 20px;border-radius:99px;box-shadow:0 10px 28px rgba(0,0,0,.28);z-index:5}
+/* dialog */
+dialog{border:1px solid var(--line);border-radius:24px;background:var(--bg);color:var(--ink);padding:0;width:min(880px,94vw);max-height:90vh;overflow:auto;box-shadow:0 30px 90px rgba(0,0,0,.4)}
+dialog::backdrop{background:rgba(6,13,15,.72);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.dh{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:26px 26px 8px}
+.dh h2{margin:0;font-size:1.7rem}
+.dh .sub{margin:6px 0 0;font-size:.97rem}
+.x{background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:999px;font:inherit;font-weight:600;padding:7px 16px;cursor:pointer}
+.db{padding:0 26px 26px}
+.items{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:20px 0}
+.item{display:block;width:100%;text-align:left;font:inherit;color:inherit;cursor:pointer;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;padding:0;transition:transform .18s,border-color .18s}
+.item:hover{border-color:var(--accent);transform:translateY(-2px)}
+.item .pic,.item img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.item div.t{padding:16px}
+.item h4{margin:0 0 4px;font-size:1.05rem}
+.item p{margin:0;color:var(--muted);font-size:.92rem}
+.item .go{display:block;margin-top:10px;color:var(--accent);font-weight:700;font-size:.9rem}
+.det{display:grid;gap:26px;margin:20px 0}
+@media(min-width:700px){.det{grid-template-columns:1fr 1fr;align-items:start}}
+.det .pic,.det img{width:100%;aspect-ratio:4/3;border-radius:16px;object-fit:cover;display:block}
+.det h3{margin:0 0 6px;font-size:1.05rem}
+.det ul{margin:0 0 18px;padding-left:20px}
+.det li{margin:4px 0}.det li::marker{color:var(--accent)}
+.det p{margin:0 0 18px;line-height:1.7}
+.det .cap{color:var(--muted);font-size:.85rem;margin:8px 0 0}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+/* before / after */
+.ba{position:relative;aspect-ratio:4/3;border-radius:16px;overflow:hidden;border:1px solid var(--line);--p:50%;touch-action:pan-y}
+.ba .pic,.ba img{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;border-radius:0;object-fit:cover}
+.ba .bl{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--p)) 0 0)}
+.ba .bl.ph .pic{filter:grayscale(.75) contrast(.7) brightness(1.1)}
+.ba .bar{position:absolute;top:0;bottom:0;left:var(--p);width:3px;margin-left:-1.5px;background:#fff;pointer-events:none}
+.ba .bar::after{content:"";position:absolute;top:50%;left:50%;width:36px;height:36px;margin:-18px;border-radius:50%;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.35)}
+.ba .tag{position:absolute;bottom:12px;z-index:2;padding:3px 11px;border-radius:99px;background:rgba(6,13,15,.72);color:#fff;font-size:.8rem;font-weight:600}
+.ba .tag.l{left:12px}.ba .tag.r{right:12px}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0;z-index:3}
+.ba:focus-within{outline:3px solid var(--accent);outline-offset:3px}
+/* responsive */
+@media(max-width:980px){.cats{grid-template-columns:repeat(2,minmax(0,1fr))}ol.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){nav{gap:12px;min-height:60px}nav b{font-size:.98rem}nav>div{flex:1;min-width:0;overflow-x:auto;gap:14px;scrollbar-width:none}nav>div::-webkit-scrollbar{display:none}nav>div a:first-child{margin-left:auto}nav a{font-size:.85rem}nav a.nav-cta{display:none}.fab{display:inline-block}.stats{grid-template-columns:1fr;gap:18px}.why,.profile-links{grid-template-columns:1fr}}
+@media(max-width:420px){nav b::before{display:none}nav b{font-size:.92rem}nav a{font-size:.8rem}nav>div{gap:12px}}
+@media(max-width:640px){.cats,ol.steps{grid-template-columns:1fr}.dh{padding:20px 18px 6px}.db{padding:0 18px 20px}.btn{padding:13px 22px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+
+/* FINAL CORPORATE PORTFOLIO DESIGN */
+:root{
+  --bg:#F5F7FA;
+  --surface:#FFFFFF;
+  --ink:#17243A;
+  --muted:#5B6778;
+  --line:#E1E7EF;
+  --accent:#315B91;
+  --accent-ink:#FFFFFF;
+  --deep:#14243B;
+  --mint:#DCE8F5;
+  --wa:#16834F;
+  --star:#D49A19;
+  --sh:0 8px 26px rgba(23,36,58,.055);
+  color-scheme:light;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"Inter",Arial,sans-serif;
+  font-size:16px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+h1,h2,h3,h4,nav b,.stats b,.profile-copy strong{
+  font-family:"Inter",Arial,sans-serif;
+}
+.topbar{
+  background:rgba(255,255,255,.96);
+  color:var(--ink);
+  border-bottom:1px solid var(--line);
+  box-shadow:0 3px 15px rgba(23,36,58,.035);
+}
+nav b{color:var(--ink);font-weight:750;letter-spacing:-.035em}
+nav b::before{background:var(--accent);box-shadow:0 0 0 4px rgba(49,91,145,.12)}
+nav a{color:#526176;font-weight:600}
+nav a:hover,nav a:focus-visible{color:var(--accent)}
+nav a.nav-cta{background:var(--accent);color:#fff}
+nav a.nav-cta:hover{background:#244873;color:#fff}
+header.hero{
+  background:
+    radial-gradient(ellipse 800px 360px at 50% 0%,rgba(49,91,145,.10),transparent 72%),
+    linear-gradient(180deg,#FFFFFF 0%,#F5F7FA 100%);
+  color:var(--ink);
+  padding:clamp(64px,8vw,100px) 0 0;
+}
+header.hero>.wrap{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+.eyebrow{
+  color:var(--accent);
+  font-size:.95rem;
+  font-weight:700;
+  letter-spacing:.01em;
+  margin:0 0 18px;
+}
+h1{
+  color:#14243B;
+  max-width:19ch;
+  margin:0 auto 20px;
+  font-size:clamp(2.35rem,5.1vw,4.35rem);
+  line-height:1.08;
+  font-weight:800;
+  letter-spacing:-.06em;
+  text-wrap:balance;
+}
+.hero .sub{
+  color:#5B6778;
+  max-width:60ch;
+  margin:0 auto 28px;
+  font-size:clamp(1rem,1.4vw,1.12rem);
+  line-height:1.8;
+}
+.hero .btns{justify-content:center}
+.btn{
+  border-radius:9px;
+  padding:13px 22px;
+  font-size:.94rem;
+  font-weight:700;
+  transition:background .18s,border-color .18s,transform .18s,box-shadow .18s;
+}
+.btn.p{background:var(--accent);color:#fff}
+.btn.p:hover{background:#244873;box-shadow:0 8px 20px rgba(49,91,145,.18)}
+.btn.w{background:var(--wa);color:#fff}
+.btn.o{background:#fff;color:var(--ink);border-color:#D5DEE9}
+.btn.o:hover{border-color:var(--accent);color:var(--accent)}
+.hero .btn.w{background:#fff;color:var(--ink);border-color:#D5DEE9}
+.hero .btn.w:hover{background:#F0F4F9;border-color:var(--accent)}
+.stats{
+  width:min(100%,900px);
+  margin:clamp(40px,6vw,65px) auto 0;
+  padding:26px 0 30px;
+  border-top:1px solid #DDE5EF;
+  text-align:left;
+}
+.stats b{color:var(--accent);font-weight:800}
+.stats span{color:#657286}
+section{scroll-margin-top:82px}
+h2{
+  color:var(--ink);
+  font-size:clamp(1.75rem,3.2vw,2.35rem);
+  font-weight:750;
+  letter-spacing:-.045em;
+}
+.sub{color:var(--muted)}
+.cats{gap:20px}
+.cat{
+  border:1px solid var(--line);
+  border-radius:14px;
+  box-shadow:var(--sh);
+}
+.cat:hover,.cat:focus-visible{
+  border-color:#A9BED9;
+  box-shadow:0 15px 34px rgba(23,36,58,.09);
+}
+.cat .body{padding:22px}
+.cat h3{color:#1B2B43;font-weight:750}
+.cat p,.cat ul{color:#5B6778}
+.cat li::marker{color:var(--accent)}
+.more,.item .go{color:var(--accent)}
+.badge{background:rgba(20,36,59,.82)}
+#reviews{background:#fff;border-color:var(--line)}
+.rv figure{
+  background:#F8FAFC;
+  border-color:var(--line);
+  border-radius:14px;
+}
+.rv blockquote{color:#29384D;font-size:1rem;line-height:1.7}
+.rv figcaption{color:#657286}
+.rv figcaption b{color:#17243A}
+.rv-btn{background:#fff;border-color:#D5DEE9;color:#263750}
+.rv-btn:hover{border-color:var(--accent);background:#F1F5FA}
+ol.steps{gap:22px}
+ol.steps li{border-top-color:#A9BED9}
+ol.steps li::before{color:var(--accent)}
+ol.steps b{color:#1B2B43}
+ol.steps span{color:#657286}
+#about{background:#fff;border-color:var(--line)}
+.about p{color:#5B6778}
+.about p b{color:#17243A}
+.why div{border-left-color:var(--accent)}
+.why h3{color:#1B2B43}
+.why p{color:#657286}
+.profile-card{
+  background:#fff;
+  border-color:var(--line);
+  border-radius:14px;
+  box-shadow:var(--sh);
+}
+.profile-card:hover{border-color:#A9BED9;box-shadow:0 12px 28px rgba(23,36,58,.08)}
+.profile-copy strong{color:#1B2B43}
+.profile-copy span{color:#657286}
+.profile-copy em{color:var(--accent)}
+.contact{
+  background:linear-gradient(135deg,#172A45 0%,#203D62 100%);
+  color:#fff;
+  border-radius:16px;
+  box-shadow:0 16px 38px rgba(23,36,58,.13);
+}
+.contact h2{color:#fff}
+.contact .sub{color:#D1DCE9}
+.contact dl{border-color:rgba(255,255,255,.18);background:rgba(255,255,255,.055)}
+.contact dt{color:#B8C8DB}
+.contact dd,.contact dd a{color:#fff}
+footer{color:#657286;border-color:var(--line)}
+.fab{border-radius:9px}
+dialog{background:#F7F9FC;border-color:var(--line);color:var(--ink)}
+.dh h2{color:var(--ink)}
+.item{background:#fff;border-color:var(--line)}
+.item:hover{border-color:#A9BED9}
+.item .go{color:var(--accent)}
+.sample-placeholder{
+  aspect-ratio:4/3;width:100%;border:1px dashed #B8C7D9;border-radius:14px;
+  background:linear-gradient(145deg,#F7F9FC,#EAF0F7);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:8px;text-align:center;padding:22px;color:#53657D;
+}
+.sample-placeholder b{color:#20344F;font-size:1rem}
+.sample-placeholder span:last-child{font-size:.86rem}
+.sample-icon{font-size:1.8rem;color:var(--accent)}
+.cap{color:#657286}
+@media(max-width:760px){
+  header.hero{padding-top:52px}
+  header.hero>.wrap{align-items:center}
+  h1{font-size:clamp(2.2rem,8.5vw,3.3rem);max-width:17ch}
+  .hero .sub{max-width:43ch}
+  .stats{text-align:center}
+  .stats span{margin-left:auto;margin-right:auto}
+  .topbar{background:rgba(255,255,255,.97)}
+}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){color-scheme:light}
+}
+
+
+/* Match the approved screenshot: clean light header and centered hero */
+.topbar{
+  background:rgba(255,255,255,.97)!important;
+  border-bottom:1px solid #E3E8EF!important;
+  box-shadow:none!important;
+}
+nav{
+  min-height:66px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+}
+nav b{color:#17243A!important;font-size:1rem!important;font-weight:800!important}
+nav b::before{background:#2D5EAA!important;box-shadow:none!important}
+nav > div{display:flex!important;align-items:center!important;gap:clamp(14px,2vw,25px)!important}
+nav a{
+  color:#59677D!important;
+  font-size:.88rem!important;
+  font-weight:650!important;
+  white-space:nowrap!important;
+}
+nav a:hover,nav a:focus-visible{color:#2457A7!important}
+nav a.nav-cta{background:transparent!important;color:#59677D!important;padding:0!important;border-radius:0!important}
+header.hero{
+  background:
+    radial-gradient(ellipse 540px 330px at 78% 14%,rgba(215,229,239,.48),transparent 72%),
+    linear-gradient(180deg,#F7F9FC 0%,#F3F6FA 100%)!important;
+  color:#17243A!important;
+  padding:8px 0 0!important;
+  text-align:center!important;
+}
+header.hero>.wrap{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  text-align:center!important;
+  max-width:1060px!important;
+  padding-top:0!important;
+}
+header.hero .eyebrow{
+  color:#2457A7!important;
+  font-size:.9rem!important;
+  font-weight:700!important;
+  letter-spacing:0!important;
+  margin:0 0 19px!important;
+}
+header.hero h1{
+  color:#14233B!important;
+  max-width:19ch!important;
+  margin:0 auto 20px!important;
+  font-size:clamp(2.45rem,5.35vw,4.25rem)!important;
+  font-weight:800!important;
+  line-height:1.08!important;
+  letter-spacing:-.06em!important;
+  text-align:center!important;
+  text-wrap:balance!important;
+}
+header.hero .sub{
+  color:#5D6B80!important;
+  max-width:62ch!important;
+  margin:0 auto 28px!important;
+  font-size:clamp(1rem,1.42vw,1.1rem)!important;
+  line-height:1.8!important;
+  text-align:center!important;
+}
+header.hero .btns{
+  justify-content:center!important;
+  align-items:center!important;
+  gap:12px!important;
+}
+header.hero .btn{
+  min-height:50px!important;
+  border-radius:999px!important;
+  padding:13px 22px!important;
+  font-size:.92rem!important;
+}
+header.hero .btn.p{
+  background:#2D5EAA!important;
+  color:#fff!important;
+  border-color:#2D5EAA!important;
+}
+header.hero .btn.p:hover{background:#234D8C!important}
+header.hero .btn.o{
+  background:#fff!important;
+  color:#17243A!important;
+  border:1px solid #D7E0EC!important;
+}
+header.hero .btn.o:hover{border-color:#2D5EAA!important;color:#2457A7!important}
+header.hero .stats{
+  width:min(100%,370px)!important;
+  display:block!important;
+  margin:34px auto 0!important;
+  padding:17px 20px 19px!important;
+  text-align:center!important;
+  background:#fff!important;
+  border:1px solid #DCE4EF!important;
+  border-radius:17px!important;
+  box-shadow:0 8px 24px rgba(28,51,83,.045)!important;
+}
+header.hero .stats b{
+  display:block!important;
+  color:#2D5EAA!important;
+  font-size:1.55rem!important;
+  line-height:1.25!important;
+  letter-spacing:-.045em!important;
+}
+header.hero .stats span{
+  display:block!important;
+  color:#657286!important;
+  font-size:.86rem!important;
+  line-height:1.5!important;
+  max-width:280px!important;
+  margin:3px auto 0!important;
+}
+@media(max-width:680px){
+  nav{min-height:62px!important}
+  nav b{font-size:.9rem!important}
+  nav > div{gap:10px!important}
+  nav a{font-size:.72rem!important}
+  header.hero{padding-top:10px!important}
+  header.hero h1{
+    max-width:17ch!important;
+    font-size:clamp(2.15rem,9vw,3.15rem)!important;
+  }
+  header.hero .sub{max-width:43ch!important;font-size:.96rem!important}
+  header.hero .stats{width:min(100%,350px)!important;margin-top:28px!important}
+}
+@media(max-width:390px){
+  nav > div{gap:7px!important}
+  nav a{font-size:.66rem!important}
+  nav b{font-size:.83rem!important}
+}
+
+
+/* Refined hero achievement metrics */
+header.hero .hero-highlights{
+  width:min(100%,620px);
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+  margin:34px auto 0;
+}
+header.hero .highlight-card{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:19px 16px 18px;
+  border:1px solid #DCE4EF;
+  border-radius:15px;
+  background:rgba(255,255,255,.92);
+  box-shadow:0 7px 22px rgba(28,51,83,.045);
+  text-align:center;
+}
+header.hero .highlight-number{
+  color:#2D5EAA;
+  font-size:2rem;
+  line-height:1.05;
+  font-weight:800;
+  letter-spacing:-.065em;
+  font-variant-numeric:tabular-nums;
+}
+header.hero .highlight-label{
+  margin-top:7px;
+  color:#17243A;
+  font-size:.94rem;
+  line-height:1.35;
+  font-weight:750;
+}
+header.hero .highlight-note{
+  margin-top:3px;
+  color:#718096;
+  font-size:.78rem;
+  line-height:1.4;
+}
+@media(max-width:480px){
+  header.hero .hero-highlights{gap:10px;margin-top:27px}
+  header.hero .highlight-card{padding:16px 9px}
+  header.hero .highlight-number{font-size:1.75rem}
+  header.hero .highlight-label{font-size:.84rem}
+  header.hero .highlight-note{font-size:.72rem}
+}
+
+
+/* Refined workflow section */
+#process{
+  background:#F5F7FA;
+  border-top:1px solid #E5EAF1;
+  border-bottom:1px solid #E5EAF1;
+}
+#process h2{margin-bottom:9px}
+#process>.sub{max-width:650px;margin-bottom:30px}
+#process ol.steps{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:14px;
+  counter-reset:workflow;
+}
+#process ol.steps li{
+  counter-increment:workflow;
+  position:relative;
+  min-width:0;
+  padding:20px 18px 19px;
+  border:1px solid #E1E7EF;
+  border-top:3px solid #315B91;
+  border-radius:12px;
+  background:#FFFFFF;
+  box-shadow:0 5px 18px rgba(23,36,58,.035);
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+#process ol.steps li:hover{
+  transform:translateY(-3px);
+  border-color:#B8C9DF;
+  border-top-color:#315B91;
+  box-shadow:0 12px 26px rgba(23,36,58,.07);
+}
+#process ol.steps li::before{
+  content:"0" counter(workflow);
+  display:block;
+  width:auto;
+  height:auto;
+  margin:0 0 17px;
+  padding:0;
+  background:transparent;
+  color:#315B91;
+  font-family:"Inter",Arial,sans-serif;
+  font-size:1.8rem;
+  font-weight:800;
+  line-height:1;
+  letter-spacing:-.055em;
+}
+#process ol.steps li b{
+  display:block;
+  margin:0 0 8px;
+  color:#17243A;
+  font-family:"Inter",Arial,sans-serif;
+  font-size:.98rem;
+  font-weight:750;
+  line-height:1.4;
+  letter-spacing:-.025em;
+}
+#process ol.steps li span{
+  display:block;
+  color:#5B6778;
+  font-size:.88rem;
+  line-height:1.65;
+}
+@media(max-width:900px){
+  #process ol.steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+}
+@media(max-width:560px){
+  #process{padding-top:42px;padding-bottom:42px}
+  #process ol.steps{grid-template-columns:minmax(0,1fr);gap:11px}
+  #process ol.steps li{padding:17px 18px}
+  #process ol.steps li::before{font-size:1.5rem;margin-bottom:11px}
+}
+@media(prefers-reduced-motion:reduce){
+  #process ol.steps li{transition:none}
+}
+
+
+/* Compact, understated footer */
+footer{
+  padding:17px 0 19px!important;
+  margin:0!important;
+  min-height:0!important;
+  background:#F5F7FA!important;
+  border-top:1px solid #E1E7EF!important;
+  color:#718096!important;
+  font-size:.82rem!important;
+  line-height:1.45!important;
+}
+footer .wrap{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:8px 20px!important;
+  min-height:0!important;
+  padding-top:0!important;
+  padding-bottom:0!important;
+}
+footer .wrap span{margin:0!important}
+@media(max-width:600px){
+  footer{padding:14px 0 16px!important}
+  footer .wrap{
+    justify-content:center!important;
+    text-align:center!important;
+    gap:4px!important;
+  }
+  footer .wrap span{width:100%}
+}
+
+
+/* Final content and interaction polish */
+:root{--focus-ring:rgba(49,91,145,.28)}
+a:focus-visible,button:focus-visible,.cat:focus-visible{
+  outline:3px solid var(--focus-ring);
+  outline-offset:3px;
+}
+section{scroll-margin-top:88px}
+section .sub{max-width:68ch}
+#services .cats{align-items:stretch}
+#services .cat{height:100%}
+#services .cat .body{display:flex;flex-direction:column;height:100%}
+#services .cat .more{margin-top:auto}
+#about .about{max-width:820px}
+#about .about p{line-height:1.82}
+#about .why{margin-top:26px}
+#process .steps li{height:100%}
+#profiles .profile-card{min-height:122px}
+#contact .contact{gap:clamp(22px,4vw,42px)}
+#contact .contact .sub{max-width:58ch}
+#contact .contact dl{min-width:min(100%,270px)}
+#contact .contact dd{overflow-wrap:anywhere}
+footer .wrap{align-items:center}
+@media(max-width:760px){
+  section{scroll-margin-top:74px}
+  #services .cat .body{height:auto}
+  #services .cat .more{margin-top:8px}
+}
+
+
+/* Banner category: distinct manual and AI service groups */
+.service-group-heading{
+  grid-column:1/-1;
+  margin:22px 0 2px;
+  padding:0 0 10px;
+  border-bottom:1px solid #E1E7EF;
+  color:#17243A;
+  font-family:"Inter",Arial,sans-serif;
+  font-size:1.08rem;
+  font-weight:750;
+  letter-spacing:-.025em;
+}
+.service-group-heading:first-child{margin-top:0}
+.service-group-heading::before{
+  content:"";
+  display:inline-block;
+  width:4px;height:17px;
+  margin:0 10px -3px 0;
+  border-radius:4px;
+  background:#315B91;
+}
+@media(max-width:620px){
+  .service-group-heading{margin-top:16px;font-size:1rem}
+}
+
+
+/* Stronger personal name greeting */
+header.hero .eyebrow{
+  color:#315B91!important;
+  font-size:clamp(1.12rem,2vw,1.32rem)!important;
+  font-weight:750!important;
+  line-height:1.35!important;
+  letter-spacing:-.025em!important;
+  margin-bottom:20px!important;
+}
+@media(max-width:680px){
+  header.hero .eyebrow{
+    font-size:1.12rem!important;
+    margin-bottom:16px!important;
+  }
+}
+/* Keep WhatsApp prominent but avoid duplicate floating buttons on desktop */
+@media(min-width:761px){
+  .fab{display:none!important}
+}
+
+
+nav a.nav-cta{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:9px 16px!important;
+  border-radius:7px!important;
+  background:#315B91!important;
+  color:#FFFFFF!important;
+  font-weight:700!important;
+}
+nav a.nav-cta:hover{background:#244873!important;color:#FFFFFF!important}
+@media(max-width:680px){
+  nav a.nav-cta{padding:7px 10px!important}
+}
+
+
+/* Compact, balanced client testimonial cards */
+.rv{align-items:stretch!important;gap:14px!important;margin-bottom:14px!important}
+.rv figure.review-card{
+  flex:0 0 100%!important;
+  min-height:190px!important;
+  padding:22px 26px!important;
+  grid-template-columns:170px minmax(0,1fr)!important;
+  grid-template-rows:auto 1fr auto!important;
+  grid-template-areas:"st q" "cap q" "cap more"!important;
+  column-gap:26px!important;
+  row-gap:8px!important;
+  border-radius:14px!important;
+  background:#fff!important;
+  box-shadow:0 5px 18px rgba(23,36,58,.045)!important;
+}
+.rv .review-card .st{font-size:.98rem!important;letter-spacing:2px!important}
+.rv .review-card blockquote{
+  align-self:center!important;
+  font-size:.96rem!important;
+  line-height:1.62!important;
+  color:#34445A!important;
+}
+.rv .review-card .review-quote.is-clamped{
+  display:-webkit-box!important;
+  -webkit-box-orient:vertical!important;
+  -webkit-line-clamp:4!important;
+  overflow:hidden!important;
+}
+.rv .review-card figcaption{
+  align-self:end!important;
+  font-size:.8rem!important;
+  line-height:1.4!important;
+}
+.rv .review-card figcaption b{font-size:.91rem!important}
+.review-more{
+  grid-area:more;
+  justify-self:start;
+  align-self:start;
+  padding:0;
+  border:0;
+  background:transparent;
+  color:#315B91;
+  font:600 .82rem "Inter",Arial,sans-serif;
+  cursor:pointer;
+}
+.review-more:hover{text-decoration:underline}
+.review-more:focus-visible{outline:2px solid #315B91;outline-offset:3px}
+@media(max-width:700px){
+  .rv figure.review-card{
+    min-height:0!important;
+    padding:19px!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    grid-template-rows:auto auto auto auto!important;
+    grid-template-areas:"st" "q" "more" "cap"!important;
+    row-gap:10px!important;
+  }
+  .rv .review-card blockquote{font-size:.92rem!important}
+  .rv .review-card figcaption{margin-top:4px}
+}
+
+
+/* WhatsApp controls: understated navigation link + compact floating pill */
+nav a.nav-cta{
+  background:transparent!important;
+  color:#526176!important;
+  border:0!important;
+  box-shadow:none!important;
+  padding:8px 2px!important;
+  border-radius:0!important;
+  font-weight:650!important;
+}
+nav a.nav-cta:hover,
+nav a.nav-cta:focus-visible{
+  background:transparent!important;
+  color:#2457A7!important;
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+.fab{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  right:16px!important;
+  bottom:calc(16px + env(safe-area-inset-bottom,0px))!important;
+  padding:9px 15px!important;
+  min-height:40px!important;
+  border-radius:999px!important;
+  background:#16834F!important;
+  color:#FFFFFF!important;
+  font-size:12px!important;
+  line-height:1!important;
+  font-weight:700!important;
+  letter-spacing:.005em!important;
+  box-shadow:0 5px 16px rgba(22,131,79,.22)!important;
+  z-index:20!important;
+}
+.fab:hover,
+.fab:focus-visible{
+  background:#116B40!important;
+  box-shadow:0 7px 19px rgba(22,131,79,.26)!important;
+}
+@media(max-width:680px){
+  .fab{
+    right:12px!important;
+    bottom:calc(12px + env(safe-area-inset-bottom,0px))!important;
+    min-height:38px!important;
+    padding:8px 13px!important;
+    font-size:11.5px!important;
+  }
+}
+
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap"><nav aria-label="Main navigation"><b>Sydul Islam</b><div><a href="#services">Services</a><a href="#process">Process</a><a href="#about">About</a><a href="#profiles">Profiles</a><a href="#contact">Contact</a><a class="nav-cta" href="https://wa.me/8801767840441" target="_blank" rel="noopener">WhatsApp</a></div></nav></div></div>
+
+<header class="hero"><div class="wrap">
+<p class="eyebrow">Hey, I'm Sydul Islam</p>
+<h1>Professional photo retouching & AI-powered image editing</h1>
+<p class="sub">Professional photo retouching for portraits, weddings, travel and real estate, alongside AI-assisted image editing, banner design and short-form video editing.</p>
+<div class="btns"><a class="btn p" href="#services">Explore services</a><a class="btn o" href="#contact">Let’s work together</a></div>
+<div class="hero-highlights" aria-label="Professional experience and completed projects">
+  <div class="highlight-card">
+    <span class="highlight-number">7+</span>
+    <span class="highlight-label">Years of Experience</span>
+    <span class="highlight-note">Professional image editing</span>
+  </div>
+  <div class="highlight-card">
+    <span class="highlight-number">150+</span>
+    <span class="highlight-label">Projects Completed</span>
+    <span class="highlight-note">For clients worldwide</span>
+  </div>
+</div>
+</div></header>
+
+<section id="services">
+<h2>What I can do for you</h2>
+<p class="sub">Explore the services below to find the right fit. Each category explains what I can do, what is included and who the service is designed for.</p>
+<div class="cats" id="cats"></div>
+</section>
+
+<section id="reviews" hidden>
+<h2>What clients say</h2>
+<p class="sub">A selection of 5-star client reviews shared on my Fiverr profile.</p>
+<div class="rv" id="rv" tabindex="0" aria-label="Client reviews, swipe or use the arrows"></div>
+<div class="rv-ctl"><button class="rv-btn" id="rvp" type="button" aria-label="Previous review">←</button><span class="rv-n" id="rvn"></span><button class="rv-btn" id="rvx" type="button" aria-label="Next review">→</button><a class="btn o" id="fv" href="#" target="_blank" rel="noopener" hidden>See all reviews on Fiverr</a></div>
+</section>
+
+<section id="about">
+<h2>About me</h2>
+<div class="about">
+<p>I’m <b>Sydul Islam</b>, a photo editor with 7+ years of experience and more than 150 completed projects for clients through Fiverr and direct collaboration. My work includes photo retouching, product image editing, real estate photo enhancement and AI-assisted visual editing. I choose the editing method according to the brief, image requirements and intended use.</p>
+<p>My approach is to improve an image without making it look artificial. I clarify the brief before starting, keep communication straightforward, review details carefully and prepare the final files to match the agreed requirements.</p>
+</div>
+<div class="why">
+<div><h3>Manual skill, AI speed</h3><p>I pick the right method for each job instead of using one tool for everything.</p></div>
+<div><h3>Every image checked</h3><p>I review each result by eye before it reaches you.</p></div>
+<div><h3>Easy communication</h3><p>Reach me directly on WhatsApp or email and explain what you need in your own words.</p></div>
+<div><h3>Careful delivery</h3><p>Each image is reviewed before delivery, with attention to details and the agreed brief.</p></div>
+</div>
+</section>
+
+<section id="process">
+<h2>My Workflow</h2>
+<p class="sub">A straightforward process with clear communication, careful editing and a final quality check at every stage.</p>
+<ol class="steps">
+<li><b>Understand the Requirements</b><span>Review the project brief, images, visual references and expected results.</span></li>
+<li><b>Plan &amp; Prepare</b><span>Confirm the editing approach, priorities and delivery timeline.</span></li>
+<li><b>Edit &amp; Refine</b><span>Apply precise retouching and AI-assisted techniques where they add value.</span></li>
+<li><b>Quality Check &amp; Deliver</b><span>Check the final work for quality, accuracy and consistency before delivery.</span></li>
+</ol>
+</section>
+
+
+
+
+<section id="profiles">
+  <h2>Professional Profiles</h2>
+  <p class="sub">Explore my freelance work, client feedback and professional background.</p>
+  <div class="profile-links">
+    <a class="profile-card" href="https://www.fiverr.com/robin8404?public_mode=true" target="_blank" rel="noopener noreferrer" aria-label="Visit Sydul Islam on Fiverr">
+      <span class="profile-icon fiverr-mark" aria-hidden="true">fi</span>
+      <span class="profile-copy">
+        <strong>Fiverr Profile</strong>
+        <span>Explore my services, client feedback and freelance work.</span>
+        <em>Visit my Fiverr profile ↗</em>
+      </span>
+    </a>
+    <a class="profile-card" href="https://www.linkedin.com/in/sydul-islam-photo-editor/" target="_blank" rel="noopener noreferrer" aria-label="Connect with Sydul Islam on LinkedIn">
+      <span class="profile-icon linkedin-mark" aria-hidden="true">in</span>
+      <span class="profile-copy">
+        <strong>LinkedIn</strong>
+        <span>Connect with me and explore my professional background on LinkedIn.</span>
+        <em>View LinkedIn profile ↗</em>
+      </span>
+    </a>
+  </div>
+</section>
+
+<section id="contact">
+<div class="contact">
+<div>
+<h2>Start a project</h2>
+<p class="sub">Tell me what you need and share your images or reference examples. If possible, include the number of images, preferred output size or format, and your deadline. I’ll review the brief and get back to you with the next steps.</p>
+<div class="btns">
+<a class="btn p" href="https://wa.me/8801767840441" target="_blank" rel="noopener">Message on WhatsApp</a>
+<a class="btn w" href="mailto:Si.robinofficial@gmail.com">Send an email</a>
+</div>
+</div>
+<dl>
+<div><dt>Name</dt><dd>Sydul Islam</dd></div>
+<div><dt>Email</dt><dd><a href="mailto:Si.robinofficial@gmail.com">Si.robinofficial@gmail.com</a></dd></div>
+<div><dt>WhatsApp</dt><dd><a href="https://wa.me/8801767840441" target="_blank" rel="noopener">+880 1767 840441</a></dd></div>
+</dl>
+</div>
+</section>
+<footer><div class="wrap"><span>© 2026 Sydul Islam</span><span>Photo retouching, AI image editing and basic video editing</span></div></footer>
+<a class="fab" href="https://wa.me/8801767840441" target="_blank" rel="noopener">WhatsApp</a>
+
+<dialog id="dlg" aria-labelledby="dt">
+<div class="dh"><div><h2 id="dt"></h2><p class="sub" id="dd" style="margin:6px 0 0"></p></div><button class="x" id="close" type="button">Close</button></div>
+<div class="db"><div class="items" id="items"></div>
+<div class="row"><button class="btn o" id="back" type="button" hidden>Back</button><a class="btn w" href="https://wa.me/8801767840441" target="_blank" rel="noopener">Order this on WhatsApp</a></div></div>
+</dialog>
+
+<script>
+/* To use your own photos: put an image file next to this page and add img:"photo.jpg" to any item below. */
+var DATA=[
+{title:"Manual image editing",tag:"Manual",a:"#3b5b92",b:"#e8a87c",
+ short:"Hand-edited photos with careful detail.",
+ intro:"Edited by hand for natural, accurate results.",
+ items:[
+ {n:"Photo retouching",d:"Skin, portrait and product cleanup that keeps a natural look.",a:"#6b3f69",b:"#f4b6a6",
+  more:"Careful hand retouching of portraits and product photos. I fix blemishes, stray hairs and uneven tones while keeping real skin texture.",
+  get:["Blemish and spot cleanup","Skin tone and light balancing","Natural look, no over-smoothing"],best:"Portraits, fashion, wedding and product photos."},
+ {n:"Colour correction",d:"Fix exposure, white balance and colour so a set of photos matches.",a:"#2f6f6d",b:"#c9e4ca",
+  more:"I correct exposure, white balance and colour so your images look accurate and consistent from the first photo to the last.",
+  get:["Exposure and white balance fix","Consistent look across a full set","Colour matched to your brand"],best:"Photographers, online shops and social media pages."},
+ {n:"Background removal",d:"Clean cut-outs with smooth edges for products, profiles and ads.",a:"#3b5b92",b:"#9fd3e6",
+  more:"Precise cut-outs made by hand, including hair and fine edges that automatic tools often get wrong.",
+  get:["Clean, smooth edges","Transparent or solid colour background","Fine detail handled by hand"],best:"E-commerce listings, profile photos and ads."},
+ {n:"Shadow and reflection",d:"Realistic shadows and reflections so products look grounded.",a:"#2b2f3a",b:"#7a8aa3",
+  more:"I add natural shadows and reflections so a product on a plain background looks real, not like it is floating.",
+  get:["Natural drop shadow","Reflection on glossy surfaces","Product looks grounded"],best:"Product photos and marketplace listings."},
+ {n:"Object removal",d:"Remove people, marks and distractions from the frame.",a:"#8a4b2a",b:"#f2cf9a",
+  more:"I remove unwanted objects and fill the area so it matches the rest of the scene.",
+  get:["Remove people, text and marks","Fill matched to the scene","Repair scratches and spots"],best:"Travel, real estate and event photos."},
+ {n:"Wedding photo editing",d:"Refine wedding portraits and event images with a consistent, natural finish.",
+  more:"Enhance wedding and event photographs with careful retouching and consistent colour correction while preserving the natural atmosphere and genuine details of the occasion.",
+  get:["Natural portrait retouching","Colour and exposure correction across image sets","Consistent editing for selected wedding photos"],best:"Wedding photographers, couples and event photography collections."},
+ {n:"Travel photo editing",d:"Enhance travel, landscape and destination photographs.",
+  more:"Improve travel photographs with balanced exposure, natural colour, detail refinement and selective cleanup while keeping the original scene believable.",
+  get:["Landscape and destination colour correction","Exposure and detail enhancement","Minor distraction and object cleanup"],best:"Travel photographers, tourism content and personal travel collections."}]},
+{title:"AI-powered image editing",tag:"AI",a:"#4b2f8a",b:"#7fd1c7",
+ short:"Faster results with AI, checked by eye.",
+ intro:"AI tools for speed, with every image reviewed by me before delivery.",
+ items:[
+ {n:"AI image retouching",d:"Quick enhancement of faces, details and lighting.",a:"#5a3d9a",b:"#f0b6d0",
+  more:"AI tools speed up enhancement of faces, detail and lighting. I review each image and fix any mistakes by hand.",
+  get:["Fast face and detail enhancement","Lighting improvement","Checked and corrected by me"],best:"Large batches and quick turnaround."},
+ {n:"AI lifestyle images",d:"Place your product in a realistic everyday scene.",a:"#1f6f78",b:"#f7d9a6",
+  more:"Show your product in a realistic lifestyle setting without organising a photoshoot.",
+  get:["Product placed in a lifestyle scene","Light and shadow matched to the scene","Suited for ads and listings"],best:"Online shops, brands and social media ads."},
+ {n:"AI background change",d:"New settings and backdrops that match your brand.",a:"#34508f",b:"#a8e0c8",
+  more:"Replace a plain or messy background with a new setting that fits your product or brand.",
+  get:["New backdrop or setting","Edges and lighting blended","Consistent look across photos"],best:"Product photos and promotional images."},
+ {n:"AI upscaling",d:"Make small or blurry images sharper and larger.",a:"#3a3f55",b:"#b7c4e0",
+  more:"Increase the size and sharpness of low-resolution images so they can be printed or used on larger screens.",
+  get:["Larger image size","Sharper detail","Noise reduction"],best:"Old photos, small downloads and print jobs."}]},
+{title:"Real estate photo editing",tag:"Real estate",a:"#315B91",b:"#C7D8EA",
+ short:"Clean, balanced property photos for listings and marketing.",
+ intro:"Property image enhancement focused on natural-looking interiors and exteriors.",
+ items:[
+ {n:"Interior photo enhancement",d:"Balance brightness, colour and detail across interior spaces.",
+  more:"Enhance interior property photos with balanced exposure, natural colour and clear details while keeping the space realistic.",
+  get:["Exposure and white-balance correction","Natural colour and detail enhancement","Consistent look across a property set"],best:"Real estate agents, property photographers and listing teams."},
+ {n:"Exterior photo enhancement",d:"Improve outdoor property images with clear, balanced presentation.",
+  more:"Refine exterior property photos by improving exposure, colour balance and overall clarity for a clean listing presentation.",
+  get:["Exposure and contrast adjustment","Natural colour refinement","Consistent exterior image set"],best:"Property listings, agencies and real estate marketing."},
+ {n:"Sky replacement",d:"Replace dull skies with a natural-looking alternative.",
+  more:"Replace an overcast or distracting sky with a suitable natural-looking sky, with attention to edges and overall image balance.",
+  get:["Natural-looking sky replacement","Careful edge blending","Tone and colour matched to the scene"],best:"Exterior property photos and promotional listings."},
+ {n:"Vertical and perspective correction",d:"Correct leaning lines for a more balanced architectural view.",
+  more:"Correct perspective and vertical lines to make architectural and room photos look more balanced while retaining a realistic appearance.",
+  get:["Vertical line correction","Perspective and alignment refinement","Balanced architectural framing"],best:"Interior, exterior and architectural photography."},
+ {n:"Property photo cleanup",d:"Remove small visual distractions where appropriate.",
+  more:"Clean up minor distractions in property photos to keep attention on the space and its features.",
+  get:["Minor object and distraction removal","Local brightness and colour refinement","Consistent presentation across images"],best:"Property listings and real estate marketing images."}]},
+{title:"Banner design & creative editing",tag:"Banner design",a:"#315B91",b:"#C7D8EA",
+ short:"Professional banners for brands, campaigns and digital platforms.",
+ intro:"Choose between manually crafted banner designs and AI-assisted banner creation, depending on your brief and creative direction.",
+ items:[
+ {group:"Manual Banner Design",n:"Social media banners",d:"Custom banners designed for social platforms and campaigns.",
+  more:"Manually design clear, brand-aligned social media banners with considered typography, layout, colour and visual hierarchy.",
+  get:["Custom layout and composition","Typography and brand-colour alignment","Platform-ready dimensions"],best:"Facebook, Instagram and other social media campaigns."},
+ {group:"Manual Banner Design",n:"Website and web banners",d:"Professional website headers, hero banners and promotional graphics.",
+  more:"Create manually composed web banners that communicate the key message clearly and fit the visual style of your website.",
+  get:["Website hero and header banners","Promotional and announcement graphics","Layout prepared for web use"],best:"Business websites, landing pages and online promotions."},
+ {group:"Manual Banner Design",n:"E-commerce promotional banners",d:"Product-focused banners for offers, launches and sales campaigns.",
+  more:"Design product-led promotional banners with clear offers, strong product presentation and readable calls to action.",
+  get:["Product and offer-focused composition","Clear promotional typography","Campaign-ready banner layouts"],best:"Online stores, product launches and seasonal campaigns."},
+ {group:"Manual Banner Design",n:"YouTube channel art and thumbnails",d:"Custom channel graphics and attention-focused video thumbnails.",
+  more:"Create manually designed YouTube channel art and thumbnails with strong visual hierarchy and legible text.",
+  get:["Channel art and cover graphics","Custom video thumbnail layouts","Consistent channel branding"],best:"YouTube creators and video channels."},
+ {group:"AI Banner Design",n:"AI-assisted banner creation",d:"Create original visual concepts with AI-assisted tools.",
+  more:"Use AI-assisted tools to generate visual concepts and supporting imagery, then refine the composition for a polished banner.",
+  get:["AI-generated visual concepts","Image selection and refinement","Final layout and quality review"],best:"Creative campaigns that need distinctive visual direction."},
+ {group:"AI Banner Design",n:"AI image enhancement for banners",d:"Improve and prepare AI-generated visuals for banner layouts.",
+  more:"Refine AI-generated images by correcting visual inconsistencies, improving detail and preparing them for use in a banner design.",
+  get:["Visual cleanup and enhancement","Colour and lighting refinement","Composition prepared for banner use"],best:"Promotional graphics and digital campaigns."},
+ {group:"AI Banner Design",n:"AI background and scene creation",d:"Generate or replace backgrounds to support a campaign concept.",
+  more:"Create or adapt background scenes with AI-assisted tools, then balance the subject, lighting and colours for a cohesive banner.",
+  get:["AI-assisted background generation","Scene and subject integration","Colour and lighting consistency"],best:"Product promotions, advertising and social campaigns."},
+ {group:"AI Banner Design",n:"AI-assisted campaign variations",d:"Develop alternate visual directions and banner variations.",
+  more:"Create and refine alternative banner concepts with AI-assisted imagery while keeping the campaign message and brand direction consistent.",
+  get:["Alternative creative concepts","Visual variations for campaign testing","Consistent message and brand direction"],best:"Digital campaigns that need multiple creative variations."}
+]},
+{title:"Basic video editing",tag:"Basic",a:"#8a2f4b",b:"#f2b36d",
+ short:"Simple, clean edits for short videos.",
+ intro:"Straightforward edits for reels, ads and short clips.",
+ items:[
+ {n:"Trim and cut",d:"Remove mistakes and keep the best parts.",a:"#8a2f4b",b:"#f2b36d",
+  more:"I cut your footage into a tidy, well-paced clip.",
+  get:["Remove mistakes and pauses","Join several clips","Export in the format you need"],best:"Reels, short ads and personal videos."},
+ {n:"Captions",d:"Clear on-screen text so viewers can follow without sound.",a:"#2b4a8b",b:"#e56b6f",
+  more:"Readable captions and text overlays that help viewers follow the video even with the sound off.",
+  get:["Timed captions","Clean, readable text style","Titles and simple text overlays"],best:"Social media videos and promotions."},
+ {n:"Music and sound",d:"Add background music and balance the audio.",a:"#4b2f8a",b:"#e8a0c0",
+  more:"I add background music and balance voice and music so the audio is comfortable to listen to.",
+  get:["Background music added","Voice and music balanced","Basic audio cleanup"],best:"Promos, vlogs and event clips."},
+ {n:"Transitions and colour",d:"Simple transitions and a consistent look across clips.",a:"#1f5f5b",b:"#d6e8a0",
+  more:"Simple transitions and basic colour adjustment so all clips look like one video.",
+  get:["Smooth, simple transitions","Basic colour adjustment","Consistent look across clips"],best:"Short edits that combine several clips."}]},
+];
+function pic(o){return o.img?'<img src="'+o.img+'" alt="'+o.n+'" loading="lazy">':'<div class="pic" role="img" aria-label="Sample image: '+(o.n||'')+'" style="--a:'+o.a+';--b:'+o.b+'"></div>'}
+var cats=document.getElementById('cats'),dlg=document.getElementById('dlg'),T=document.getElementById('dt'),D=document.getElementById('dd'),L=document.getElementById('items'),B=document.getElementById('back'),cur=0;
+DATA.forEach(function(c,i){
+ var b=document.createElement('div');b.className='cat';b.setAttribute('role','button');b.setAttribute('tabindex','0');b.setAttribute('aria-label','Explore '+c.title+' services');
+ b.innerHTML=(c.ba?cardBA(c):'<div class="pic" role="img" aria-label="Sample image for '+c.title+'" style="--a:'+c.a+';--b:'+c.b+'"><span class="badge">'+c.tag+'</span></div>')+'<div class="body"><h3>'+c.title+'</h3><p>'+c.short+'</p><ul>'+c.items.slice(0,3).map(function(x){return '<li>'+x.n+'</li>'}).join('')+'</ul><button class="more" type="button">View services and samples</button></div>';
+ b.onclick=function(e){showCat(i);if(dlg.showModal){dlg.showModal()}else{dlg.setAttribute('open','')}};b.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();b.click()}};cats.appendChild(b);
+});
+function showCat(i){cur=i;var c=DATA[i];
+ T.textContent=c.title;D.textContent=c.intro;B.hidden=true;
+ L.className='items';
+ var lastGroup='';L.innerHTML=c.items.map(function(x,j){var heading=x.group&&x.group!==lastGroup?'<h3 class="service-group-heading">'+x.group+'</h3>':'';lastGroup=x.group||'';return heading+'<button class="item" type="button" data-j="'+j+'">'+pic(x)+'<div class="t"><h4>'+x.n+'</h4><p>'+x.d+'</p><span class="go">View details</span></div></button>'}).join('');
+ dlg.scrollTop=0;
+}
+function cardBA(c){var x={n:c.title,a:c.a,b:c.b};return '<div class="ba" style="--p:50%">'+pic(x)+'<div class="bl ph">'+pic(x)+'</div><span class="tag l">Before</span><span class="tag r">After</span><span class="badge">'+c.tag+'</span><div class="bar"></div><input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after: '+c.title+'"></div>'}
+document.getElementById('cats').addEventListener('input',function(e){if(e.target.type==='range')e.target.parentNode.style.setProperty('--p',e.target.value+'%')});
+function slider(x){return '<div><div class="sample-placeholder" role="img" aria-label="Portfolio sample to be added"><span class="sample-icon">✦</span><b>Work sample coming soon</b><span>Add an original before-and-after image here</span></div><p class="cap">Real editing examples will be added to this portfolio.</p></div>'}
+function showItem(j){var c=DATA[cur],x=c.items[j];
+ T.textContent=x.n;D.textContent=c.title;B.hidden=false;B.textContent='Back to '+c.title;
+ L.className='det';
+ L.innerHTML=(c.ba?slider(x):pic(x))+'<div><p>'+x.more+'</p><h3>What you get</h3><ul>'+x.get.map(function(g){return '<li>'+g+'</li>'}).join('')+'</ul><h3>Best for</h3><p>'+x.best+'</p></div>';
+ dlg.scrollTop=0;
+}
+L.addEventListener('input',function(e){if(e.target.type==='range')e.target.parentNode.style.setProperty('--p',e.target.value+'%')});
+L.addEventListener('click',function(e){var t=e.target.closest('.item');if(t)showItem(+t.dataset.j)});
+B.onclick=function(){showCat(cur)};
+document.getElementById('close').onclick=function(){dlg.close()};
+dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
+/* Client reviews transcribed from the screenshots supplied by Sydul. */
+var REVIEWS=[
+ {name:"wade_hooper",from:"Australia · 1 month ago",stars:5,text:"This is the second time I have used Sydul for my product page image project, and I am just as impressed as I was the first time. The images look professional, polished and visually appealing, and they fit my brand extremely well. Sydul has a great understanding of what I am trying to achieve and is always quick to respond to any changes or feedback. The final result exceeded my expectations again. I will definitely be using Sydul for future projects and would highly recommend his work."},
+ {name:"andread e haro",from:"United States · 1 month ago",stars:5,text:"Sydul is great to work with. He does an exceptional job at receiving feedback and incorporating any revisions. I would recommend him for your projects!"},
+ {name:"cherisomekh",from:"South Africa · 1 month ago",stars:5,text:"Our project was completed as we requested. looking forward to working with Sydul in the future. We can highly recommend him."},
+ {name:"montengco33",from:"United States · 2 months ago",stars:5,text:"GREAT JOB, EXCEPTIONAL WORK QUALITY"},
+ {name:"rob_dunbar",from:"United States · 4 months ago",stars:5,text:"Done a few jobs for me now, very happy with the work, would highly recommend"},
+ {name:"lhlhalberlin",from:"Philippines · 4 months ago",stars:5,text:"Very good and nice 🙌🙌🙌"},
+ {name:"multikulti657",from:"Germany · 6 months ago",stars:5,text:"this is my fifth order with this designer, and once again I’m very satisfied. The communication is clear and professional, delivery is on time, and the quality of work is consistently excellent. The designer understands my requirements well and always implements feedback accurately. I highly recommend working with him and will definitely continue collaborating in the future."},
+ {name:"mlclswimmm",from:"United States · 7 months ago",stars:5,text:"Amazing job, excellent communication, fast turn around time, 10/10 recommend."},
+ {name:"noahricklow",from:"Thailand · 9 months ago",stars:5,text:"Sydul was a pleasure to work with! He payed loads of attention to my requirements, and it payed off as his work was exceptional. I highly recommend him for work! A very polite and kind man too which is always great."},
+ {name:"anna_kemska",from:"Poland · 10 months ago",stars:5,text:"Professional and responsive freelancer. Delivered the work on time, followed instructions carefully, and communicated clearly throughout the process. I'm satisfied with the cooperation and final result."}
+];
+var FIVERR="https://www.fiverr.com/robin8404?public_mode=true";
+function esc(t){var d=document.createElement('div');d.textContent=t;return d.innerHTML}
+if(REVIEWS.length||FIVERR){
+ document.getElementById('reviews').hidden=false;
+ document.getElementById('rv').innerHTML=REVIEWS.map(function(r){var n=r.stars||5, long=r.text.length>230;return '<figure class="review-card"><div class="st" role="img" aria-label="'+n+' out of 5 stars">'+'\u2605'.repeat(n)+'</div><blockquote'+(long?' class="review-quote is-clamped"':'')+'>\u201C'+esc(r.text)+'\u201D</blockquote>'+(long?'<button class="review-more" type="button" aria-expanded="false">Read full review</button>':'')+'<figcaption><b>'+esc(r.name)+'</b>'+(r.from?', '+esc(r.from):'')+'</figcaption></figure>'}).join('');
+ document.getElementById('rv').addEventListener('click',function(e){var b=e.target.closest('.review-more');if(!b)return;var q=b.parentNode.querySelector('.review-quote'),expanded=b.getAttribute('aria-expanded')==='true';q.classList.toggle('is-clamped',expanded);b.setAttribute('aria-expanded',String(!expanded));b.textContent=expanded?'Read full review':'Show less'});
+ if(FIVERR){var f=document.getElementById('fv');f.href=FIVERR;f.hidden=false}
+}
+
+(function(){var r=document.getElementById('rv'),n=document.getElementById('rvn'),k=r.children,i=0,hold=false;
+ if(!k.length)return;
+ function step(){return k.length>1?k[1].offsetLeft-k[0].offsetLeft:r.clientWidth}
+ function show(){n.textContent=(i+1)+' / '+k.length}
+ function go(x){i=(x+k.length)%k.length;r.scrollTo({left:i*step(),behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});show()}
+ r.addEventListener('scroll',function(){var j=Math.round(r.scrollLeft/step());if(j!==i){i=j;show()}},{passive:true});
+ document.getElementById('rvp').onclick=function(){go(i-1)};
+ document.getElementById('rvx').onclick=function(){go(i+1)};
+ r.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();go(i+1)}if(e.key==='ArrowLeft'){e.preventDefault();go(i-1)}});
+ ['mouseenter','focusin','touchstart'].forEach(function(t){document.getElementById('reviews').addEventListener(t,function(){hold=true},{passive:true})});
+ ['mouseleave','focusout'].forEach(function(t){document.getElementById('reviews').addEventListener(t,function(){hold=false})});
+ if(!matchMedia('(prefers-reduced-motion:reduce)').matches)setInterval(function(){if(!hold&&!document.hidden)go(i+1)},7000);
+ show();
+})();
+</script>
+</body>
+</html>
