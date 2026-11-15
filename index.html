@@ -1609,6 +1609,63 @@ dialog#dlg[open]{animation:none!important}
   text-decoration:none!important;
 }
 
+
+/* MOBILE DARK-MODE CONTRAST FIX
+   The portfolio design is intentionally light. Keep its text and controls
+   readable when Android/iOS or the browser requests dark mode. */
+:root,
+:root[data-theme="dark"],
+:root:not([data-theme="light"]){
+  --bg:#F2F5F9!important;
+  --surface:#FFFFFF!important;
+  --ink:#17263D!important;
+  --muted:#5D6B7E!important;
+  --line:#DDE5EF!important;
+  --accent:#315F9F!important;
+  --accent-ink:#FFFFFF!important;
+  --deep:#142844!important;
+  --mint:#DCE8F5!important;
+  --wa:#16834F!important;
+  --star:#D49A19!important;
+  --sh:0 10px 30px rgba(23,38,61,.065)!important;
+  color-scheme:light!important;
+}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#F2F5F9!important;
+    --surface:#FFFFFF!important;
+    --ink:#17263D!important;
+    --muted:#5D6B7E!important;
+    --line:#DDE5EF!important;
+    --accent:#315F9F!important;
+    --accent-ink:#FFFFFF!important;
+    --deep:#142844!important;
+    --mint:#DCE8F5!important;
+    --wa:#16834F!important;
+    --star:#D49A19!important;
+    --sh:0 10px 30px rgba(23,38,61,.065)!important;
+    color-scheme:light!important;
+  }
+}
+body{background:#F2F5F9!important;color:#17263D!important}
+#reviews h2,#about h2,#profiles h2,#process h2,#services h2{color:#17263D!important}
+#reviews .sub,#about .sub,#profiles .sub,#process .sub,#services .sub{color:#5D6B7E!important}
+#reviews .rv blockquote{color:#34445A!important}
+#reviews .rv figcaption b{color:#17263D!important}
+#reviews .rv figcaption{color:#657286!important}
+#reviews #fv,#reviews .rv-ctl #fv{
+  background:#FFFFFF!important;color:#315F9F!important;
+  border:1px solid #D5DEE9!important;opacity:1!important;
+}
+#dlg .dh h2,#dlg .det h3,#dlg .det p,#dlg .det li,#dlg .x,#dlg #back{color:#17263D!important}
+#dlg .dh,#dlg .db,#dlg .det>div:last-child{background-color:#FFFFFF!important}
+#dlg .x,#dlg #back{background:#EDF2F8!important;border-color:#D6E0EC!important}
+#profiles .profile-card,#reviews .review-card,#about{color:#17263D!important}
+@media(max-width:760px){
+  #reviews h2,#about h2,#profiles h2,#process h2,#services h2{color:#17263D!important}
+  #reviews #fv,#reviews .rv-ctl #fv{color:#315F9F!important;background:#FFFFFF!important}
+}
+
 </style>
 </head>
 <body>
@@ -1823,7 +1880,42 @@ function openServicePage(){
   dlg.scrollTop=0;
   document.body.classList.add('service-page-open');
 }
+
+var detailVideoObserver=null;
+function pauseDetailVideos(){
+  dlg.querySelectorAll('.detail-story-video video').forEach(function(video){
+    try{video.pause()}catch(error){}
+  });
+}
+function setupDetailVideoBehavior(){
+  if(detailVideoObserver){
+    detailVideoObserver.disconnect();
+    detailVideoObserver=null;
+  }
+  var videos=dlg.querySelectorAll('.detail-story-video video');
+  if(!videos.length)return;
+  videos.forEach(function(video){
+    video.muted=true;
+    video.defaultMuted=true;
+    video.pause();
+  });
+  if('IntersectionObserver' in window){
+    detailVideoObserver=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting || entry.intersectionRatio<0.25){
+          entry.target.pause();
+        }
+      });
+    },{root:dlg,threshold:[0,0.1,0.25,0.5]});
+    videos.forEach(function(video){detailVideoObserver.observe(video);});
+  }
+}
+document.addEventListener('visibilitychange',function(){
+  if(document.hidden)pauseDetailVideos();
+});
+
 function closeServicePage(){
+  pauseDetailVideos();
   if(typeof dlg.close==='function' && dlg.open)dlg.close();else dlg.removeAttribute('open');
   document.body.classList.remove('service-page-open');
 }
@@ -1857,7 +1949,7 @@ function showCat(index){
     L.innerHTML='<div class="detail-story video-detail-story">'+
       '<div class="detail-story-image"><img src="'+category.mainImage+'" alt="Basic video editing service preview"></div>'+
       '<div class="detail-story-copy"><span class="detail-kicker">Service overview</span><p>I edit short videos into clear, well-paced content for social media, product promotions and simple business communication. The process starts by reviewing your footage and brief, selecting the useful moments, arranging the sequence and refining the overall flow. The aim is a clean final video that communicates the message without unnecessary effects.</p></div>'+
-      (category.videoFile?'<div class="detail-story-video"><video controls preload="auto"><source src="'+category.videoFile+'" type="video/mp4">Your browser does not support video playback.</video><p class="cap">Video editing sample</p></div>':'')+
+      (category.videoFile?'<div class="detail-story-video"><video controls preload="metadata" muted playsinline><source src="'+category.videoFile+'" type="video/mp4">Your browser does not support video playback.</video><p class="cap">Video editing sample</p></div>':'')+
       '<div class="detail-story-copy"><h3>What I can help with</h3><ul>'+
       '<li><strong>Trimming and cutting:</strong> remove unwanted sections, shorten pauses and keep the most useful moments.</li>'+
       '<li><strong>Clip arrangement:</strong> organise footage into a clear sequence with a natural beginning, middle and ending.</li>'+
@@ -1873,6 +1965,7 @@ function showCat(index){
   }
   dlg.scrollTop=0;
   L.scrollTop=0;
+  setupDetailVideoBehavior();
 }
 function cardBA(category){var image={n:category.title,a:category.a,b:category.b};return '<div class="ba" style="--p:50%">'+pic(image)+'<div class="bl ph">'+pic(image)+'</div><span class="tag l">Before</span><span class="tag r">After</span><span class="badge">'+category.tag+'</span><div class="bar"></div><input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after: '+category.title+'"></div>'}
 function slider(item){return '<div><div class="sample-placeholder" role="img" aria-label="Portfolio sample to be added"><span class="sample-icon">✦</span><b>Work sample coming soon</b><span>Add an original before-and-after image here</span></div><p class="cap">Real editing examples will be added to this portfolio.</p></div>'}
@@ -1966,7 +2059,7 @@ document.getElementById('close').addEventListener('click',function(){
   }
 });
 dlg.addEventListener('click',function(event){if(event.target===dlg)closeServicePage();});
-dlg.addEventListener('close',function(){document.body.classList.remove('service-page-open');});
+dlg.addEventListener('close',function(){pauseDetailVideos();document.body.classList.remove('service-page-open');});
 /* Brand link always returns to the absolute top of this same portfolio page. */
 var brandHome=document.querySelector('.nav-brand');
 if(brandHome){
