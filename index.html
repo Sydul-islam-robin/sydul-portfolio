@@ -1842,6 +1842,7 @@ function showCat(index){
   T.removeAttribute('role');T.removeAttribute('tabindex');T.removeAttribute('aria-label');
   activeCategoryIndex=index;activeItemIndex=-1;
   var category=DATA[activeCategoryIndex];
+  window.history.replaceState(null,'',window.location.pathname+window.location.search+'#service-category='+encodeURIComponent(category.title));
   T.textContent=category.title;D.textContent='';B.hidden=false;B.textContent='Back to services';
   L.className='items';
   var lastGroup='';
@@ -1895,6 +1896,7 @@ function showItem(itemIndex){
   T.setAttribute('role','link');T.setAttribute('tabindex','0');T.setAttribute('aria-label','Open '+DATA[activeCategoryIndex].items[itemIndex].n+' service page');
   activeItemIndex=itemIndex;
   var category=DATA[activeCategoryIndex],item=category.items[activeItemIndex];
+  window.history.replaceState(null,'',window.location.pathname+window.location.search+'#service-category='+encodeURIComponent(category.title)+'&service-item='+encodeURIComponent(item.n));
   T.textContent=item.n;D.textContent='';
   B.hidden=false;B.textContent='Back to Main Page';
   L.className='det detail-story';
@@ -2028,6 +2030,24 @@ if(REVIEWS.length||FIVERR){
  if(!matchMedia('(prefers-reduced-motion:reduce)').matches)setInterval(function(){if(!hold&&!document.hidden)go(i+1)},7000);
  show();
 })();
+
+/* Restore an opened category or service detail after browser reload. */
+(function restoreServiceView(){
+  var hash=window.location.hash||'';
+  if(hash.indexOf('#service-category=')!==0)return;
+  var params=new URLSearchParams(hash.slice(1));
+  var categoryName=params.get('service-category');
+  var itemName=params.get('service-item');
+  var categoryIndex=DATA.findIndex(function(category){return category.title===categoryName;});
+  if(categoryIndex<0)return;
+  showCat(categoryIndex);
+  openServicePage();
+  if(itemName){
+    var itemIndex=DATA[categoryIndex].items.findIndex(function(item){return item.n===itemName;});
+    if(itemIndex>=0)showItem(itemIndex);
+  }
+})();
+
 </script>
 </body>
 </html>
