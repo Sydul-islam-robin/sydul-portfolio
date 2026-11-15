@@ -866,7 +866,7 @@ nav a.nav-cta:focus-visible{
 
 
 
-/* PROFESSIONAL EXPERIENCE POLISH — restrained colour, clearer hierarchy */
+/* PROFESSIONAL EXPERIENCE POLISH — restrained color, clearer hierarchy */
 :root{
   --bg:#F2F5F9;
   --surface:#FFFFFF;
@@ -1483,10 +1483,136 @@ dialog#dlg[open]{animation:none!important}
   #dlg .video-detail-story .detail-story-copy{padding:18px 4px 22px!important}
 }
 
+
+/* Service detail pages: compact title bar and slimmer sticky action bar.
+   These rules are scoped to the service dialog; the main portfolio is unchanged. */
+#dlg .dh{
+  min-height:0!important;
+  padding:10px max(18px,calc((100vw - 1120px)/2))!important;
+  align-items:center!important;
+  gap:14px!important;
+  box-shadow:0 1px 7px rgba(23,38,61,.035)!important;
+}
+#dlg .dh h2{
+  margin:0!important;
+  font-size:clamp(1.18rem,2.3vw,1.55rem)!important;
+  line-height:1.2!important;
+}
+#dlg .dh #dd{display:none!important}
+#dlg .x{
+  min-width:68px!important;
+  min-height:36px!important;
+  padding:6px 14px!important;
+  font-size:.88rem!important;
+}
+#dlg .db>.row{
+  min-height:0!important;
+  padding:7px 0 max(7px,env(safe-area-inset-bottom))!important;
+  gap:9px!important;
+  box-shadow:0 -1px 7px rgba(23,38,61,.025)!important;
+}
+#dlg .db>.row .btn{
+  min-height:36px!important;
+  padding:8px 16px!important;
+  font-size:.86rem!important;
+  line-height:1.2!important;
+}
+#dlg .db>.row a.btn.w{padding-inline:19px!important}
+#dlg .db>.row button#back{padding-inline:17px!important}
+#dlg .dh>div{min-width:0}
+#dlg .dh h2{overflow-wrap:anywhere}
+.nav-brand{display:inline-flex;align-items:center;text-decoration:none}
+.nav-brand b{color:inherit}
+.nav-brand:focus-visible{outline:3px solid rgba(49,95,159,.28);outline-offset:4px;border-radius:4px}
+@media(max-width:699px){
+  #dlg .dh{min-height:0!important;padding:8px 14px!important;gap:9px!important}
+  #dlg .dh h2{font-size:1.12rem!important}
+  #dlg .x{min-width:60px!important;min-height:33px!important;padding:5px 11px!important;font-size:.82rem!important}
+  #dlg .db>.row{padding:6px 0 max(6px,env(safe-area-inset-bottom))!important;gap:7px!important}
+  #dlg .db>.row .btn{min-height:34px!important;padding:7px 11px!important;font-size:.78rem!important}
+  #dlg .db>.row a.btn.w{padding-inline:12px!important}
+  #dlg .db>.row button#back{padding-inline:12px!important}
+}
+
+
+/* Individual service detail pages: keep only the Back button, without a footer bar. */
+#dlg .db>.row{
+  position:sticky!important;
+  bottom:8px!important;
+  z-index:6!important;
+  display:flex!important;
+  justify-content:flex-start!important;
+  align-items:center!important;
+  width:100%!important;
+  min-height:0!important;
+  margin:18px 0 8px!important;
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important;
+  pointer-events:none!important;
+}
+#dlg .db>.row #back{
+  pointer-events:auto!important;
+  min-height:36px!important;
+  padding:8px 16px!important;
+  border-radius:999px!important;
+  box-shadow:0 3px 12px rgba(23,38,61,.08)!important;
+}
+@media(max-width:699px){
+  #dlg .db>.row{
+    bottom:6px!important;
+    margin:14px 0 6px!important;
+  }
+  #dlg .db>.row #back{
+    min-height:34px!important;
+    padding:7px 12px!important;
+    font-size:.8rem!important;
+  }
+}
+
+
+/* The title on an individual service detail page links back to that same detail view. */
+#dlg .dh h2[role="link"]{cursor:pointer;text-decoration:none;text-underline-offset:4px}
+#dlg .dh h2[role="link"]:hover{text-decoration:underline}
+#dlg .dh h2[role="link"]:focus-visible{outline:2px solid rgba(49,95,159,.45);outline-offset:4px;border-radius:3px}
+
+
+/* On an individual service page, the service title links back to its category page. */
+#dt[role="link"]{cursor:pointer}
+#dt[role="link"]:hover{text-decoration:underline;text-underline-offset:4px}
+#dt[role="link"]:focus-visible{outline:3px solid rgba(49,95,159,.28);outline-offset:4px;border-radius:3px}
+
+
+/* Category listing page: use the top-right action as the single Back to services control. */
+#dlg.category-view .db>.row{
+  display:none!important;
+}
+#dlg.category-view .dh .x{
+  min-width:116px!important;
+}
+
+
+/* Two-level navigation on individual service detail pages */
+#dlg:not(.category-view) .dh .x{
+  min-width:76px!important;
+}
+#dlg:not(.category-view) .db>.row #back{
+  font-weight:700!important;
+}
+
+
+/* Keep clickable service titles clean: no underline on mouse hover. */
+#dlg .dh h2[role="link"]:hover,
+#dt[role="link"]:hover{
+  text-decoration:none!important;
+}
+
 </style>
 </head>
 <body>
-<div class="topbar"><div class="wrap"><nav aria-label="Main navigation"><a href="/" style="color:inherit;text-decoration:none"><b>Sydul Islam</b></a><div><a href="#services">Services</a><a href="#process">Process</a><a href="#about">About</a><a href="#profiles">Profiles</a><a href="#contact">Contact</a></div></nav></div></div>
+<div class="topbar" id="top"><div class="wrap"><nav aria-label="Main navigation"><a class="nav-brand" href="#top" aria-label="Sydul Islam — home"><b>Sydul Islam</b></a><div><a href="#services">Services</a><a href="#process">Process</a><a href="#about">About</a><a href="#profiles">Profiles</a><a href="#contact">Contact</a></div></nav></div></div>
 
 <header class="hero"><div class="wrap">
 <p class="eyebrow">Hey, I'm Sydul Islam</p>
@@ -1578,12 +1704,12 @@ dialog#dlg[open]{animation:none!important}
 <p class="sub">Tell me what you need and share your images or reference examples. If possible, include the number of images, preferred output size or format, and your deadline. I’ll review the brief and get back to you with the next steps.</p>
 <div class="btns">
 <a class="btn p" href="https://wa.me/8801767840441" target="_blank" rel="noopener">Message on WhatsApp</a>
-<a class="btn w" href="mailto:Si.robinofficial@gmail.com">Send an email</a>
+<a class="btn w" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=Si.robinofficial@gmail.com" target="_blank" rel="noopener">Send an email</a>
 </div>
 </div>
 <dl>
 <div><dt>Name</dt><dd>Sydul Islam</dd></div>
-<div><dt>Email</dt><dd><a href="mailto:Si.robinofficial@gmail.com">Si.robinofficial@gmail.com</a></dd></div>
+<div><dt>Email</dt><dd><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=Si.robinofficial@gmail.com" target="_blank" rel="noopener">Si.robinofficial@gmail.com</a></dd></div>
 <div><dt>WhatsApp</dt><dd><a href="https://wa.me/8801767840441" target="_blank" rel="noopener">+880 1767 840441</a></dd></div>
 </dl>
 </div>
@@ -1594,7 +1720,7 @@ dialog#dlg[open]{animation:none!important}
 <dialog id="dlg" aria-labelledby="dt">
 <div class="dh"><div><h2 id="dt"></h2><p class="sub" id="dd" style="margin:6px 0 0"></p></div><button class="x" id="close" type="button">Close</button></div>
 <div class="db"><div class="items" id="items"></div>
-<div class="row"><button class="btn o" id="back" type="button">Back to services</button><a class="btn w" href="https://wa.me/8801767840441" target="_blank" rel="noopener" aria-label="Contact Sydul about this service on WhatsApp">Contact on WhatsApp</a></div></div>
+<div class="row"><button class="btn o" id="back" type="button">Back to services</button></div></div>
 </dialog>
 
 <script>
@@ -1607,12 +1733,12 @@ var DATA=[
  {n:"Photo retouching",d:"Skin, portrait and product cleanup that keeps a natural look.",a:"#6b3f69",b:"#f4b6a6",
   more:"Careful hand retouching of portraits and product photos. I fix blemishes, stray hairs and uneven tones while keeping real skin texture.",
   get:["Blemish and spot cleanup","Skin tone and light balancing","Natural look, no over-smoothing"],best:"Portraits, fashion, wedding and product photos.",img:"Images/Manual%20image%20editing/Photo%20retouching/Photo%20retouching%200.jpg",gallery:["Images/Manual%20image%20editing/Photo%20retouching/Photo%20retouching%200.jpg", "Images/Manual%20image%20editing/Photo%20retouching/Photo%20retouching%2001.jpg", "Images/Manual%20image%20editing/Photo%20retouching/Photo%20retouching%2002.jpg"]},
- {n:"Colour correction",d:"Fix exposure, white balance and colour so a set of photos matches.",a:"#2f6f6d",b:"#c9e4ca",
-  more:"I correct exposure, white balance and colour so your images look accurate and consistent from the first photo to the last.",
-  get:["Exposure and white balance fix","Consistent look across a full set","Colour matched to your brand"],best:"Photographers, online shops and social media pages.",img:"Images/Manual%20image%20editing/Colour%20correction/Colour%20correction%200.jpg",gallery:["Images/Manual%20image%20editing/Colour%20correction/Colour%20correction%200.jpg", "Images/Manual%20image%20editing/Colour%20correction/Colour%20correction%2001.jpg", "Images/Manual%20image%20editing/Colour%20correction/Colour%20correction%2002.jpg"]},
+ {n:"color correction",d:"Fix exposure, white balance and color so a set of photos matches.",a:"#2f6f6d",b:"#c9e4ca",
+  more:"I correct exposure, white balance and color so your images look accurate and consistent from the first photo to the last.",
+  get:["Exposure and white balance fix","Consistent look across a full set","color matched to your brand"],best:"Photographers, online shops and social media pages.",img:"Images/Manual%20image%20editing/Colour%20correction/Colour%20correction%200.jpg",gallery:["Images/Manual%20image%20editing/Colour%20correction/Colour%20correction%200.jpg", "Images/Manual%20image%20editing/Colour%20correction/Colour%20correction%2001.jpg", "Images/Manual%20image%20editing/Colour%20correction/Colour%20correction%2002.jpg"]},
  {n:"Background removal",d:"Clean cut-outs with smooth edges for products, profiles and ads.",a:"#3b5b92",b:"#9fd3e6",
   more:"Precise cut-outs made by hand, including hair and fine edges that automatic tools often get wrong.",
-  get:["Clean, smooth edges","Transparent or solid colour background","Fine detail handled by hand"],best:"E-commerce listings, profile photos and ads.",img:"Images/Manual%20image%20editing/Background%20removal/Background%20removal%200.jpg",gallery:["Images/Manual%20image%20editing/Background%20removal/Background%20removal%200.jpg", "Images/Manual%20image%20editing/Background%20removal/Background%20removal%2001.jpg", "Images/Manual%20image%20editing/Background%20removal/Background%20removal%2002.jpg"]},
+  get:["Clean, smooth edges","Transparent or solid color background","Fine detail handled by hand"],best:"E-commerce listings, profile photos and ads.",img:"Images/Manual%20image%20editing/Background%20removal/Background%20removal%200.jpg",gallery:["Images/Manual%20image%20editing/Background%20removal/Background%20removal%200.jpg", "Images/Manual%20image%20editing/Background%20removal/Background%20removal%2001.jpg", "Images/Manual%20image%20editing/Background%20removal/Background%20removal%2002.jpg"]},
  {n:"Shadow and reflection",d:"Realistic shadows and reflections so products look grounded.",a:"#2b2f3a",b:"#7a8aa3",
   more:"I add natural shadows and reflections so a product on a plain background looks real, not like it is floating.",
   get:["Natural drop shadow","Reflection on glossy surfaces","Product looks grounded"],best:"Product photos and marketplace listings.",img:"Images/Manual%20image%20editing/Shadow%20and%20reflection/Shadow%20and%20reflection.jpg",gallery:["Images/Manual%20image%20editing/Shadow%20and%20reflection/Shadow%20and%20reflection.jpg"]},
@@ -1620,11 +1746,11 @@ var DATA=[
   more:"I remove unwanted objects and fill the area so it matches the rest of the scene.",
   get:["Remove people, text and marks","Fill matched to the scene","Repair scratches and spots"],best:"Travel, real estate and event photos.",img:"Images/Manual%20image%20editing/Object%20removal/Object%20removal%200.jpg",gallery:["Images/Manual%20image%20editing/Object%20removal/Object%20removal%200.jpg", "Images/Manual%20image%20editing/Object%20removal/Object%20removal%2001.jpg", "Images/Manual%20image%20editing/Object%20removal/Object%20removal%2002.jpg"]},
  {n:"Wedding photo editing",d:"Refine wedding portraits and event images with a consistent, natural finish.",
-  more:"Enhance wedding and event photographs with careful retouching and consistent colour correction while preserving the natural atmosphere and genuine details of the occasion.",
-  get:["Natural portrait retouching","Colour and exposure correction across image sets","Consistent editing for selected wedding photos"],best:"Wedding photographers, couples and event photography collections.",img:"Images/Manual%20image%20editing/Wedding%20photo%20editing/Wedding%20photo%20editing%200.jpg",gallery:["Images/Manual%20image%20editing/Wedding%20photo%20editing/Wedding%20photo%20editing%200.jpg", "Images/Manual%20image%20editing/Wedding%20photo%20editing/Wedding%20photo%20editing%2001.jpg", "Images/Manual%20image%20editing/Wedding%20photo%20editing/Wedding%20photo%20editing%2003.jpg"]},
+  more:"Enhance wedding and event photographs with careful retouching and consistent color correction while preserving the natural atmosphere and genuine details of the occasion.",
+  get:["Natural portrait retouching","color and exposure correction across image sets","Consistent editing for selected wedding photos"],best:"Wedding photographers, couples and event photography collections.",img:"Images/Manual%20image%20editing/Wedding%20photo%20editing/Wedding%20photo%20editing%200.jpg",gallery:["Images/Manual%20image%20editing/Wedding%20photo%20editing/Wedding%20photo%20editing%200.jpg", "Images/Manual%20image%20editing/Wedding%20photo%20editing/Wedding%20photo%20editing%2001.jpg", "Images/Manual%20image%20editing/Wedding%20photo%20editing/Wedding%20photo%20editing%2003.jpg"]},
  {n:"Travel photo editing",d:"Enhance travel, landscape and destination photographs.",
-  more:"Improve travel photographs with balanced exposure, natural colour, detail refinement and selective cleanup while keeping the original scene believable.",
-  get:["Landscape and destination colour correction","Exposure and detail enhancement","Minor distraction and object cleanup"],best:"Travel photographers, tourism content and personal travel collections.",img:"Images/Manual%20image%20editing/Travel%20photo%20editing/Travel%20photo%20editing%200.jpg",gallery:["Images/Manual%20image%20editing/Travel%20photo%20editing/Travel%20photo%20editing%200.jpg", "Images/Manual%20image%20editing/Travel%20photo%20editing/Travel%20photo%20editing%2001.jpg", "Images/Manual%20image%20editing/Travel%20photo%20editing/Travel%20photo%20editing%2002.jpg", "Images/Manual%20image%20editing/Travel%20photo%20editing/Travel%20photo%20editing%2003.jpg"]}]},
+  more:"Improve travel photographs with balanced exposure, natural color, detail refinement and selective cleanup while keeping the original scene believable.",
+  get:["Landscape and destination color correction","Exposure and detail enhancement","Minor distraction and object cleanup"],best:"Travel photographers, tourism content and personal travel collections.",img:"Images/Manual%20image%20editing/Travel%20photo%20editing/Travel%20photo%20editing%200.jpg",gallery:["Images/Manual%20image%20editing/Travel%20photo%20editing/Travel%20photo%20editing%200.jpg", "Images/Manual%20image%20editing/Travel%20photo%20editing/Travel%20photo%20editing%2001.jpg", "Images/Manual%20image%20editing/Travel%20photo%20editing/Travel%20photo%20editing%2002.jpg", "Images/Manual%20image%20editing/Travel%20photo%20editing/Travel%20photo%20editing%2003.jpg"]}]},
 {title:"AI-powered image editing",mainImage:"Images/AI-powered%20image%20editing/AI-powered%20image%20editing%20-%20Main%20image.jpg",tag:"AI",a:"#4b2f8a",b:"#7fd1c7",
  short:"Faster results with AI, checked by eye.",
  intro:"AI tools for speed, with every image reviewed by me before delivery.",
@@ -1645,24 +1771,24 @@ var DATA=[
  short:"Clean, balanced property photos for listings and marketing.",
  intro:"Property image enhancement focused on natural-looking interiors and exteriors.",
  items:[
- {n:"Interior photo enhancement",d:"Balance brightness, colour and detail across interior spaces.",
-  more:"Enhance interior property photos with balanced exposure, natural colour and clear details while keeping the space realistic.",
-  get:["Exposure and white-balance correction","Natural colour and detail enhancement","Consistent look across a property set"],best:"Real estate agents, property photographers and listing teams.",img:"Images/Real%20estate%20photo%20editing/Interior%20photo%20enhancement/Interior%20photo%20enhancement%200.jpg",gallery:["Images/Real%20estate%20photo%20editing/Interior%20photo%20enhancement/Interior%20photo%20enhancement%200.jpg", "Images/Real%20estate%20photo%20editing/Interior%20photo%20enhancement/Interior%20photo%20enhancement%2001.jpg"]},
+ {n:"Interior photo enhancement",d:"Balance brightness, color and detail across interior spaces.",
+  more:"Enhance interior property photos with balanced exposure, natural color and clear details while keeping the space realistic.",
+  get:["Exposure and white-balance correction","Natural color and detail enhancement","Consistent look across a property set"],best:"Real estate agents, property photographers and listing teams.",img:"Images/Real%20estate%20photo%20editing/Interior%20photo%20enhancement/Interior%20photo%20enhancement%200.jpg",gallery:["Images/Real%20estate%20photo%20editing/Interior%20photo%20enhancement/Interior%20photo%20enhancement%200.jpg", "Images/Real%20estate%20photo%20editing/Interior%20photo%20enhancement/Interior%20photo%20enhancement%2001.jpg"]},
  {n:"Exterior photo enhancement",d:"Improve outdoor property images with clear, balanced presentation.",
-  more:"Refine exterior property photos by improving exposure, colour balance and overall clarity for a clean listing presentation.",
-  get:["Exposure and contrast adjustment","Natural colour refinement","Consistent exterior image set"],best:"Property listings, agencies and real estate marketing.",img:"Images/Real%20estate%20photo%20editing/Exterior%20photo%20enhancement/Exterior%20photo%20enhancement%200.jpg",gallery:["Images/Real%20estate%20photo%20editing/Exterior%20photo%20enhancement/Exterior%20photo%20enhancement%200.jpg", "Images/Real%20estate%20photo%20editing/Exterior%20photo%20enhancement/Exterior%20photo%20enhancement%2001.jpg"]},
+  more:"Refine exterior property photos by improving exposure, color balance and overall clarity for a clean listing presentation.",
+  get:["Exposure and contrast adjustment","Natural color refinement","Consistent exterior image set"],best:"Property listings, agencies and real estate marketing.",img:"Images/Real%20estate%20photo%20editing/Exterior%20photo%20enhancement/Exterior%20photo%20enhancement%200.jpg",gallery:["Images/Real%20estate%20photo%20editing/Exterior%20photo%20enhancement/Exterior%20photo%20enhancement%200.jpg", "Images/Real%20estate%20photo%20editing/Exterior%20photo%20enhancement/Exterior%20photo%20enhancement%2001.jpg"]},
  {n:"Sky replacement",d:"Replace dull skies with a natural-looking alternative.",
   more:"Replace an overcast or distracting sky with a suitable natural-looking sky, with attention to edges and overall image balance.",
-  get:["Natural-looking sky replacement","Careful edge blending","Tone and colour matched to the scene"],best:"Exterior property photos and promotional listings.",img:"Images/Real%20estate%20photo%20editing/Sky%20replacement/Sky%20replacement%200.jpg",gallery:["Images/Real%20estate%20photo%20editing/Sky%20replacement/Sky%20replacement%200.jpg", "Images/Real%20estate%20photo%20editing/Sky%20replacement/Sky%20replacement%2001.jpg"]},
+  get:["Natural-looking sky replacement","Careful edge blending","Tone and color matched to the scene"],best:"Exterior property photos and promotional listings.",img:"Images/Real%20estate%20photo%20editing/Sky%20replacement/Sky%20replacement%200.jpg",gallery:["Images/Real%20estate%20photo%20editing/Sky%20replacement/Sky%20replacement%200.jpg", "Images/Real%20estate%20photo%20editing/Sky%20replacement/Sky%20replacement%2001.jpg"]},
  {n:"Vertical and perspective correction",d:"Correct leaning lines for a more balanced architectural view.",
   more:"Correct perspective and vertical lines to make architectural and room photos look more balanced while retaining a realistic appearance.",
   get:["Vertical line correction","Perspective and alignment refinement","Balanced architectural framing"],best:"Interior, exterior and architectural photography.",img:"Images/Real%20estate%20photo%20editing/Vertical%20and%20perspective%20correction/Vertical%20and%20perspective%20correction%200.jpg",gallery:["Images/Real%20estate%20photo%20editing/Vertical%20and%20perspective%20correction/Vertical%20and%20perspective%20correction%200.jpg", "Images/Real%20estate%20photo%20editing/Vertical%20and%20perspective%20correction/Vertical%20and%20perspective%20correction%2001.jpg"]},]},
 {title:"Banner design AI and manual",mainImage:"Images/Banner%20design%20%26%20creative%20editing/Banner%20design%20%26%20creative%20editing%20Main%20Image.png",tag:"AI + Manual",a:"#315B91",b:"#C7D8EA",
  short:"Professionally designed banners for brands, campaigns and digital platforms.",
- intro:"Custom banner design with careful attention to layout, typography, colour and brand consistency.",
+ intro:"Custom banner design with careful attention to layout, typography, color and brand consistency.",
  items:[ {n:"Social media banners",d:"Custom banners designed for social platforms and campaigns.",
-  more:"Manually design clear, brand-aligned social media banners with considered typography, layout, colour and visual hierarchy.",
-  get:["Custom layout and composition","Typography and brand-colour alignment","Platform-ready dimensions"],best:"Facebook, Instagram and other social media campaigns.",img:"Images/Banner%20design%20%26%20creative%20editing/Social%20media%20banners/Social%20media%20banners%200.png",gallery:["Images/Banner%20design%20%26%20creative%20editing/Social%20media%20banners/Social%20media%20banners%200.png", "Images/Banner%20design%20%26%20creative%20editing/Social%20media%20banners/Social%20media%20banners%2001.png"]}, {n:"Website and web banners",d:"Professional website headers, hero banners and promotional graphics.",
+  more:"Manually design clear, brand-aligned social media banners with considered typography, layout, color and visual hierarchy.",
+  get:["Custom layout and composition","Typography and brand-color alignment","Platform-ready dimensions"],best:"Facebook, Instagram and other social media campaigns.",img:"Images/Banner%20design%20%26%20creative%20editing/Social%20media%20banners/Social%20media%20banners%200.png",gallery:["Images/Banner%20design%20%26%20creative%20editing/Social%20media%20banners/Social%20media%20banners%200.png", "Images/Banner%20design%20%26%20creative%20editing/Social%20media%20banners/Social%20media%20banners%2001.png"]}, {n:"Website and web banners",d:"Professional website headers, hero banners and promotional graphics.",
   more:"Create manually composed web banners that communicate the key message clearly and fit the visual style of your website.",
   get:["Website hero and header banners","Promotional and announcement graphics","Layout prepared for web use"],best:"Business websites, landing pages and online promotions.",img:"Images/Banner%20design%20%26%20creative%20editing/Website%20and%20web%20banners/Website%20and%20web%20banners%2001.jpg",gallery:["Images/Banner%20design%20%26%20creative%20editing/Website%20and%20web%20banners/Website%20and%20web%20banners%2001.jpg", "Images/Banner%20design%20%26%20creative%20editing/Website%20and%20web%20banners/Website%20and%20web%20banners.png"]}, {n:"E-commerce promotional banners",d:"Product-focused banners for offers, launches and sales campaigns.",
   more:"Design product-led promotional banners with clear offers, strong product presentation and readable calls to action.",
@@ -1672,7 +1798,7 @@ var DATA=[
  intro:"Straightforward edits for reels, ads and short clips.",
  items:[]},
 ];
-var DETAIL_TEXT = {"Photo retouching":"Each image is reviewed individually so the retouching fits the subject and the purpose of the photograph. The focus is on small, careful corrections rather than an artificial finish: distracting blemishes can be cleaned up, skin tone and lighting can be balanced, and product details can be refined while preserving natural texture and shape. If you have a reference style, I can use it to keep a consistent look across the set.","Colour correction":"The goal is to make the photograph look balanced and consistent without pushing colours too far. I can adjust exposure, highlights, shadows, white balance, contrast and colour tones, then compare images in the same set so they feel like they belong together. This is useful when photos were taken under different lighting conditions or need to match a brand's visual style.","Background removal":"I carefully separate the subject from its original background and refine the edges so the cut-out looks clean. Fine details such as hair, fabric edges and product contours need particular attention. The finished image can be prepared with a transparent background or a clean replacement background, depending on where you plan to use it.","Shadow and reflection":"A product can look disconnected when it is placed on a plain background without believable grounding. I create or refine shadows and reflections to match the product's shape, light direction and surface. The result is intended to look natural and controlled, helping the product sit convincingly in the scene rather than appearing to float.","Object removal":"Unwanted objects, people, wires, marks or other distractions can take attention away from the main subject. I remove the selected elements and rebuild the affected area to blend with nearby textures, colours, perspective and lighting. The aim is a clean result that still looks like a believable photograph, not an obvious patch or blur.","Wedding photo editing":"Wedding photographs need a consistent finish while retaining the emotion and atmosphere of the day. I can refine exposure, white balance, colour, contrast and selected portrait details across a group of images. The editing approach stays natural, with attention to skin tones, clothing details and consistency from one photograph to the next.","Travel photo editing":"Travel photographs often contain changing light, skies, landscapes and busy surroundings. I can balance exposure and colour, bring out useful detail, refine contrast and clean up selected distractions while preserving the character of the location. The intention is to make the scene clear and engaging without making it look unrealistic.","AI image retouching":"AI-assisted retouching can speed up repetitive enhancement, but the result still needs a careful visual check. I review facial details, edges, texture, lighting and small irregularities, then make manual corrections where the automated result looks unnatural. This combines a faster workflow with a final image that is checked for consistency and visual quality.","AI lifestyle images":"Lifestyle visuals help customers understand how a product may look in a real setting. I can place a product into a suitable scene and work on scale, perspective, lighting, shadows and colour so the composite feels coherent. The final image is reviewed for visible AI artefacts and inconsistencies, with manual refinement where needed.","AI background change":"A new background can give a product or subject a different context for a campaign, listing or social post. I select or create a suitable setting and pay attention to subject edges, scale, perspective, light direction and colour balance. The aim is to make the subject sit naturally in the new environment rather than look simply pasted onto it.","AI upscaling":"Upscaling can help when the available source image is small or lacks visible detail. I use enhancement tools to increase image dimensions and improve perceived sharpness, then review the result for unwanted texture, halos or invented-looking details. The best outcome depends on the quality of the original file, so very low-resolution sources may still have limits.","Social media banners":"Social media banners are designed around the platform, message and audience. I organise the main visual, headline, supporting information and call to action so the design is easy to understand at a glance. Layout, typography, colour and spacing are considered together, and the artwork is prepared to suit the dimensions you need for your campaign.","Website and web banners":"Website banners need to communicate quickly while fitting the look of the page around them. I can create hero headers, promotional strips and campaign graphics with a clear focal point, readable text and a balanced composition. The layout is planned for the intended placement so important content remains visible across common screen sizes.","E-commerce promotional banners":"Promotional banners for online stores should make the product and offer easy to understand. I arrange product imagery, offer details, supporting copy and a clear visual hierarchy so customers can recognise the message quickly. Designs can be prepared for product launches, seasonal promotions, discounts and other store campaigns using the brand assets and information you provide."};
+var DETAIL_TEXT = {"Photo retouching":"Each image is reviewed individually so the retouching fits the subject and the purpose of the photograph. The focus is on small, careful corrections rather than an artificial finish: distracting blemishes can be cleaned up, skin tone and lighting can be balanced, and product details can be refined while preserving natural texture and shape. If you have a reference style, I can use it to keep a consistent look across the set.","color correction":"The goal is to make the photograph look balanced and consistent without pushing colors too far. I can adjust exposure, highlights, shadows, white balance, contrast and color tones, then compare images in the same set so they feel like they belong together. This is useful when photos were taken under different lighting conditions or need to match a brand's visual style.","Background removal":"I carefully separate the subject from its original background and refine the edges so the cut-out looks clean. Fine details such as hair, fabric edges and product contours need particular attention. The finished image can be prepared with a transparent background or a clean replacement background, depending on where you plan to use it.","Shadow and reflection":"A product can look disconnected when it is placed on a plain background without believable grounding. I create or refine shadows and reflections to match the product's shape, light direction and surface. The result is intended to look natural and controlled, helping the product sit convincingly in the scene rather than appearing to float.","Object removal":"Unwanted objects, people, wires, marks or other distractions can take attention away from the main subject. I remove the selected elements and rebuild the affected area to blend with nearby textures, colors, perspective and lighting. The aim is a clean result that still looks like a believable photograph, not an obvious patch or blur.","Wedding photo editing":"Wedding photographs need a consistent finish while retaining the emotion and atmosphere of the day. I can refine exposure, white balance, color, contrast and selected portrait details across a group of images. The editing approach stays natural, with attention to skin tones, clothing details and consistency from one photograph to the next.","Travel photo editing":"Travel photographs often contain changing light, skies, landscapes and busy surroundings. I can balance exposure and color, bring out useful detail, refine contrast and clean up selected distractions while preserving the character of the location. The intention is to make the scene clear and engaging without making it look unrealistic.","AI image retouching":"AI-assisted retouching can speed up repetitive enhancement, but the result still needs a careful visual check. I review facial details, edges, texture, lighting and small irregularities, then make manual corrections where the automated result looks unnatural. This combines a faster workflow with a final image that is checked for consistency and visual quality.","AI lifestyle images":"Lifestyle visuals help customers understand how a product may look in a real setting. I can place a product into a suitable scene and work on scale, perspective, lighting, shadows and color so the composite feels coherent. The final image is reviewed for visible AI artefacts and inconsistencies, with manual refinement where needed.","AI background change":"A new background can give a product or subject a different context for a campaign, listing or social post. I select or create a suitable setting and pay attention to subject edges, scale, perspective, light direction and color balance. The aim is to make the subject sit naturally in the new environment rather than look simply pasted onto it.","AI upscaling":"Upscaling can help when the available source image is small or lacks visible detail. I use enhancement tools to increase image dimensions and improve perceived sharpness, then review the result for unwanted texture, halos or invented-looking details. The best outcome depends on the quality of the original file, so very low-resolution sources may still have limits.","Social media banners":"Social media banners are designed around the platform, message and audience. I organise the main visual, headline, supporting information and call to action so the design is easy to understand at a glance. Layout, typography, color and spacing are considered together, and the artwork is prepared to suit the dimensions you need for your campaign.","Website and web banners":"Website banners need to communicate quickly while fitting the look of the page around them. I can create hero headers, promotional strips and campaign graphics with a clear focal point, readable text and a balanced composition. The layout is planned for the intended placement so important content remains visible across common screen sizes.","E-commerce promotional banners":"Promotional banners for online stores should make the product and offer easy to understand. I arrange product imagery, offer details, supporting copy and a clear visual hierarchy so customers can recognise the message quickly. Designs can be prepared for product launches, seasonal promotions, discounts and other store campaigns using the brand assets and information you provide."};
 DATA.forEach(function(category){category.items.forEach(function(item){if(DETAIL_TEXT[item.n])item.detail=DETAIL_TEXT[item.n];});});
 function pic(o){return o.img?'<img src="'+o.img+'" alt="'+o.n+'" loading="lazy">':'<div class="pic" role="img" aria-label="Sample image: '+(o.n||'')+'" style="--a:'+o.a+';--b:'+o.b+'"></div>'}
 function sampleGallery(item){
@@ -1684,6 +1810,14 @@ function sampleGallery(item){
 
 var cats=document.getElementById('cats'),dlg=document.getElementById('dlg'),T=document.getElementById('dt'),D=document.getElementById('dd'),L=document.getElementById('items'),B=document.getElementById('back');
 var activeCategoryIndex=-1, activeItemIndex=-1;
+T.addEventListener('click',function(){
+  if(activeItemIndex>=0&&activeCategoryIndex>=0)showCat(activeCategoryIndex);
+});
+T.addEventListener('keydown',function(event){
+  if(activeItemIndex>=0&&activeCategoryIndex>=0&&(event.key==='Enter'||event.key===' ')){
+    event.preventDefault();showCat(activeCategoryIndex);
+  }
+});
 function openServicePage(){
   if(!dlg.open){if(typeof dlg.showModal==='function')dlg.showModal();else dlg.setAttribute('open','');}
   dlg.scrollTop=0;
@@ -1697,15 +1831,18 @@ DATA.forEach(function(category,index){
   var card=document.createElement('div');
   card.className='cat'+(category.title.toLowerCase().indexOf('banner design')===0?' cat-banner-design':'')+(category.videoFile?' cat-basic-video':'');card.setAttribute('role','button');card.setAttribute('tabindex','0');
   card.setAttribute('aria-label','Explore '+category.title+' services');
-  card.innerHTML=(category.ba?cardBA(category):(category.mainImage?'<div class="cat-main-media">'+(category.videoFile?'<video class="cat-preview-video" autoplay muted loop playsinline preload="auto" aria-label="Preview video for '+category.title+'"><source src="'+category.videoFile+'" type="video/mp4"></video>':'<img src="'+category.mainImage+'" alt="'+category.title+'" loading="lazy">')+'<span class="badge">'+category.tag+'</span></div>':'<div class="pic" role="img" aria-label="Sample image for '+category.title+'" style="--a:'+category.a+';--b:'+category.b+'"><span class="badge">'+category.tag+'</span></div>'))+'<div class="body"><h3>'+category.title+'</h3><p>'+(category.videoFile?'Clean edits for reels, ads and short clips, including trimming, transitions, colour correction and sound balancing.':category.short)+'</p><ul>'+(category.videoFile?'<li>Trim and cut clips</li><li>Transitions and colour correction</li><li>Sound, music and captions</li>':category.items.slice(0,3).map(function(item){return '<li>'+item.n+'</li>'}).join(''))+'</ul><button class="more" type="button">View services and samples</button></div>';
+  card.innerHTML=(category.ba?cardBA(category):(category.mainImage?'<div class="cat-main-media">'+(category.videoFile?'<video class="cat-preview-video" autoplay muted loop playsinline preload="auto" aria-label="Preview video for '+category.title+'"><source src="'+category.videoFile+'" type="video/mp4"></video>':'<img src="'+category.mainImage+'" alt="'+category.title+'" loading="lazy">')+'<span class="badge">'+category.tag+'</span></div>':'<div class="pic" role="img" aria-label="Sample image for '+category.title+'" style="--a:'+category.a+';--b:'+category.b+'"><span class="badge">'+category.tag+'</span></div>'))+'<div class="body"><h3>'+category.title+'</h3><p>'+(category.videoFile?'Clean edits for reels, ads and short clips, including trimming, transitions, color correction and sound balancing.':category.short)+'</p><ul>'+(category.videoFile?'<li>Trim and cut clips</li><li>Transitions and color correction</li><li>Sound, music and captions</li>':category.items.slice(0,3).map(function(item){return '<li>'+item.n+'</li>'}).join(''))+'</ul><button class="more" type="button">View services and samples</button></div>';
   card.addEventListener('click',function(event){event.preventDefault();event.stopPropagation();showCat(index);openServicePage();});
   card.addEventListener('keydown',function(event){if(event.key==='Enter'||event.key===' '){event.preventDefault();showCat(index);openServicePage();}});
   cats.appendChild(card);
 });
 function showCat(index){
+  dlg.classList.add('category-view');
+  document.getElementById('close').textContent='Back to services';
+  T.removeAttribute('role');T.removeAttribute('tabindex');T.removeAttribute('aria-label');
   activeCategoryIndex=index;activeItemIndex=-1;
   var category=DATA[activeCategoryIndex];
-  T.textContent=category.title;D.textContent=category.intro;B.hidden=false;B.textContent='Back to services';
+  T.textContent=category.title;D.textContent='';B.hidden=false;B.textContent='Back to services';
   L.className='items';
   var lastGroup='';
   if(category.items.length){
@@ -1724,12 +1861,12 @@ function showCat(index){
       '<li><strong>Trimming and cutting:</strong> remove unwanted sections, shorten pauses and keep the most useful moments.</li>'+
       '<li><strong>Clip arrangement:</strong> organise footage into a clear sequence with a natural beginning, middle and ending.</li>'+
       '<li><strong>Transitions:</strong> add simple, suitable transitions where they help the video flow smoothly.</li>'+
-      '<li><strong>Colour correction:</strong> balance exposure, contrast, white balance and colour so clips look more consistent.</li>'+
+      '<li><strong>color correction:</strong> balance exposure, contrast, white balance and color so clips look more consistent.</li>'+
       '<li><strong>Sound and audio:</strong> adjust audio levels, reduce distracting volume differences and balance background music with the original sound.</li>'+
       '<li><strong>Text and captions:</strong> add straightforward titles, labels or captions when required.</li>'+
       '<li><strong>Export and format:</strong> prepare the finished video for the platform and aspect ratio agreed for the project.</li>'+
       '</ul></div>'+
-      '<div class="detail-story-copy"><h3>How the editing process works</h3><p>First, I review your footage and identify the strongest moments for the final sequence. I then trim unnecessary sections, arrange the clips in a logical order and refine the pacing so the video feels clear and easy to follow. Where needed, I add simple transitions, titles or captions and balance the audio so music and original sound do not compete with each other.</p><p>Before export, I check the full video from beginning to end for abrupt cuts, inconsistent colour, distracting sound changes and text placement. The finished file is then prepared for the agreed platform, orientation and output settings.</p></div>'+
+      '<div class="detail-story-copy"><h3>How the editing process works</h3><p>First, I review your footage and identify the strongest moments for the final sequence. I then trim unnecessary sections, arrange the clips in a logical order and refine the pacing so the video feels clear and easy to follow. Where needed, I add simple transitions, titles or captions and balance the audio so music and original sound do not compete with each other.</p><p>Before export, I check the full video from beginning to end for abrupt cuts, inconsistent color, distracting sound changes and text placement. The finished file is then prepared for the agreed platform, orientation and output settings.</p></div>'+
       '<div class="detail-story-copy"><h3>What to provide</h3><p>Please share the original footage, your preferred video length, the platform where it will be published, any text or logo that needs to appear, and one reference video if you have a particular style in mind. If you do not have a reference, a short description of the audience and purpose is enough to establish the direction.</p></div>'+
       '<div class="detail-story-copy"><h3>Best for</h3><p>Short social media videos, reels, product clips, simple promotional content and basic business videos. This service is best suited to straightforward editing rather than complex animation, advanced visual effects or full-scale film production. The scope and delivery format can be confirmed before work begins.</p></div></div>';
   }
@@ -1753,18 +1890,21 @@ L.addEventListener('click',function(event){
 
 function showItem(itemIndex){
   if(activeCategoryIndex<0||!DATA[activeCategoryIndex]||!DATA[activeCategoryIndex].items[itemIndex])return;
+  dlg.classList.remove('category-view');
+  document.getElementById('close').textContent='← Back';
+  T.setAttribute('role','link');T.setAttribute('tabindex','0');T.setAttribute('aria-label','Open '+DATA[activeCategoryIndex].items[itemIndex].n+' service page');
   activeItemIndex=itemIndex;
   var category=DATA[activeCategoryIndex],item=category.items[activeItemIndex];
-  T.textContent=item.n;D.textContent=category.title;
-  B.hidden=false;B.textContent='Back to '+category.title;
+  T.textContent=item.n;D.textContent='';
+  B.hidden=false;B.textContent='Back to Main Page';
   L.className='det detail-story';
   var images=(item.gallery&&item.gallery.length?item.gallery:(item.img?[item.img]:[]));
   var overview=item.detail||item.more||item.d||'This service is tailored to the image, the intended use and the result you want to achieve. I review the supplied files and brief first, then apply the relevant editing steps with attention to detail, consistency and a natural finish.';
   var deliverables=item.get||[];
   var best=item.best||'Personal, business and promotional projects that need a clean, professional visual result.';
-  var processText='I begin by reviewing the original files, your instructions and any reference examples. I then work through the required adjustments, check the result at normal viewing size and make sure the final image is suitable for its intended use. If you have brand guidelines, preferred colours or a particular visual style, those can be used to guide the work.';
+  var processText='I begin by reviewing the original files, your instructions and any reference examples. I then work through the required adjustments, check the result at normal viewing size and make sure the final image is suitable for its intended use. If you have brand guidelines, preferred colors or a particular visual style, those can be used to guide the work.';
   var getIntro='The service is planned around your brief. Depending on the source image and the requested result, the work can include the following:';
-  var whatYouGet='<div class="detail-story-copy"><h3>What you will get</h3><p>'+getIntro+'</p><ul>'+deliverables.map(function(point){return '<li>'+point+'</li>'}).join('')+'</ul><p>Before delivery, I review the edited image for visible inconsistencies, edge quality, colour balance and overall presentation. The final file is prepared in the format and dimensions agreed for your project.</p></div>';
+  var whatYouGet='<div class="detail-story-copy"><h3>What you will get</h3><p>'+getIntro+'</p><ul>'+deliverables.map(function(point){return '<li>'+point+'</li>'}).join('')+'</ul><p>Before delivery, I review the edited image for visible inconsistencies, edge quality, color balance and overall presentation. The final file is prepared in the format and dimensions agreed for your project.</p></div>';
   var bestBlock='<div class="detail-story-copy"><h3>Suitable for</h3><p>'+best+'</p><p>For an accurate quote and smooth workflow, please share the original image, the changes you need, your preferred output size and any reference images. I can then confirm the scope and expected delivery before starting.</p></div>';
   var story='';
   if(images.length){
@@ -1794,10 +1934,15 @@ function showItem(itemIndex){
   dlg.scrollTop=0;
 }
 B.addEventListener('click',function(){
-  if(activeItemIndex>=0 && activeCategoryIndex>=0){
-    showCat(activeCategoryIndex);
+  /* On an individual service page, the bottom button returns to the homepage. */
+  if(activeItemIndex>=0){
+    closeServicePage();
+    activeCategoryIndex=-1;activeItemIndex=-1;
+    window.history.replaceState(null,'',window.location.pathname);
+    window.scrollTo({top:0,behavior:'auto'});
     return;
   }
+  /* On a category page, return to the main Services section. */
   closeServicePage();
   activeCategoryIndex=-1;activeItemIndex=-1;
   var target=document.getElementById('services');
@@ -1809,9 +1954,30 @@ B.addEventListener('click',function(){
     window.scrollTo({top:Math.max(0,top),behavior:'auto'});
   }
 });
-document.getElementById('close').addEventListener('click',closeServicePage);
+document.getElementById('close').addEventListener('click',function(){
+  if(dlg.classList.contains('category-view')){
+    B.click();
+  }else if(activeCategoryIndex>=0){
+    showCat(activeCategoryIndex);
+  }else{
+    closeServicePage();
+  }
+});
 dlg.addEventListener('click',function(event){if(event.target===dlg)closeServicePage();});
 dlg.addEventListener('close',function(){document.body.classList.remove('service-page-open');});
+/* Brand link always returns to the absolute top of this same portfolio page. */
+var brandHome=document.querySelector('.nav-brand');
+if(brandHome){
+  brandHome.addEventListener('click',function(event){
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    if(dlg.open)closeServicePage();
+    activeCategoryIndex=-1;
+    activeItemIndex=-1;
+    window.history.replaceState(null,'',window.location.pathname);
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+}
 /* Accurate section navigation: align the complete target section below the sticky header. */
 document.querySelectorAll('nav a[href^="#"], .hero a[href^="#"]').forEach(function(link){
   link.addEventListener('click',function(event){
